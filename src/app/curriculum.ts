@@ -189,27 +189,34 @@ export const CURRICULUM: Module[] = [
     lessons: [
       {
         id: '5.1',
+        slug: 'spam-filter',
+        title: 'Build a spam filter',
+        summary: 'From a table to a learned decision line, using only vectors and matrices.',
+        ai: 'A linear classifier is a learned direction plus a threshold: the core of many real models.',
+      },
+      {
+        id: '5.2',
         slug: 'projection-least-squares',
         title: 'Projection and least squares',
         summary: 'The best-fit line.',
         ai: 'Linear regression, the simplest trainable model, is a projection.',
       },
       {
-        id: '5.2',
+        id: '5.3',
         slug: 'eigenvectors',
         title: 'Eigenvectors and eigenvalues',
         summary: 'Directions a matrix does not turn.',
         ai: 'PCA finds the most informative directions in data using eigenvectors.',
       },
       {
-        id: '5.3',
+        id: '5.4',
         slug: 'svd',
         title: 'Singular value decomposition',
         summary: 'Rotate, stretch, rotate.',
         ai: 'SVD compresses data and models by keeping only what matters most.',
       },
       {
-        id: '5.4',
+        id: '5.5',
         slug: 'attention',
         title: 'Capstone: attention',
         summary: 'A tiny attention head, step by step.',

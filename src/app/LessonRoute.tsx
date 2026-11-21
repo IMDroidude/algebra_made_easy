@@ -3,6 +3,7 @@ import type { ReactNode } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { ALL_LESSONS } from './curriculum'
 import { LESSON_PAGES, isAvailable } from './lessonRegistry'
+import { LessonSectionNav } from './LessonSectionNav'
 import { TAKEAWAYS } from './takeawaysRegistry'
 
 class LessonErrorBoundary extends Component<{ children: ReactNode }, { error: Error | null }> {
@@ -94,6 +95,7 @@ export function LessonRoute() {
   }
   return (
     <LessonErrorBoundary key={slug}>
+      <LessonSectionNav slug={slug} />
       <Suspense fallback={<p className="mx-auto max-w-6xl px-4 py-16 text-muted">Loading lesson…</p>}>
         <Page />
       </Suspense>

@@ -1,0 +1,93 @@
+{
+ "_note": "\"numpy\" is the exact stdout of \"code\" run with NumPy 2.5.5, in the order of cases.ts",
+ "cases": [
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[0])   # row 1: N1",
+   "numpy": "(8, 2)\n[1 0]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[1])   # row 2: N2",
+   "numpy": "(8, 2)\n[0 1]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[2])   # row 3: N3",
+   "numpy": "(8, 2)\n[1 2]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[3])   # row 4: N4",
+   "numpy": "(8, 2)\n[2 1]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[4])   # row 5: S1",
+   "numpy": "(8, 2)\n[4 3]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[5])   # row 6: S2",
+   "numpy": "(8, 2)\n[3 4]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[6])   # row 7: S3",
+   "numpy": "(8, 2)\n[5 4]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nprint(X.shape)\nprint(X[7])   # row 8: S4",
+   "numpy": "(8, 2)\n[4 5]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\nprint(mu_normal)\nprint(mu_spam)\nprint(mu_spam - mu_normal)",
+   "numpy": "[1. 1.]\n[4. 4.]\n[3. 3.]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [7, 6], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\nprint(mu_normal)\nprint(mu_spam)\nprint(mu_spam - mu_normal)",
+   "numpy": "[1. 1.]\n[4.5 4.5]\n[3.5 3.5]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[0, 0], [0, 1], [1, 2], [2, 1],\n              [1, 6], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\nprint(mu_normal)\nprint(mu_spam)\nprint(mu_spam - mu_normal)",
+   "numpy": "[0.75 1.  ]\n[3.25 4.75]\n[2.5  3.75]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [5, 5],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\nprint(mu_normal)\nprint(mu_spam)\nprint(mu_spam - mu_normal)",
+   "numpy": "[1.75 2.  ]\n[4. 4.]\n[2.25 2.  ]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = np.ones(4) @ X[y == 0] / 4   # 1ᵀX / 4: the mean\nmu_spam = np.ones(4) @ X[y == 1] / 4\nd = mu_spam - mu_normal\nw = d / 3                     # same direction, tidier numbers\nmid = (mu_normal + mu_spam) / 2\nb = w @ mid\nprint(d, w)\nprint(mid, b)",
+   "numpy": "[3. 3.] [1. 1.]\n[2.5 2.5] 5.0"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\ndev_n = X[y == 0] - mu_normal   # each email minus its own centre\ndev_s = X[y == 1] - mu_spam\nS_w = dev_n.T @ dev_n + dev_s.T @ dev_s\nprint(S_w)\nprint(np.linalg.solve(S_w, mu_spam - mu_normal))",
+   "numpy": "[[4. 0.]\n [0. 4.]]\n[0.75 0.75]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[0, 1], [6, 1], [3, 0], [3, 2],\n              [2, 3], [8, 3], [5, 2], [5, 4]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\n\nmu_normal = X[y == 0].mean(axis=0)\nmu_spam = X[y == 1].mean(axis=0)\ndev_n = X[y == 0] - mu_normal   # each email minus its own centre\ndev_s = X[y == 1] - mu_spam\nS_w = dev_n.T @ dev_n + dev_s.T @ dev_s\nprint(S_w)\nprint(np.linalg.solve(S_w, mu_spam - mu_normal))",
+   "numpy": "[[36.  0.]\n [ 0.  4.]]\n[0.05555556 0.5       ]"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\nw = np.array([1, 1])\nb = 5\n\nscores = X @ w        # one dot product per row\nprint(scores)\nprint(scores > b)     # True means \"spam\"\n\nnew = np.array([1, 3])\nprint(new @ w, new @ w > b)",
+   "numpy": "[1 1 3 3 7 7 9 9]\n[False False False False  True  True  True  True]\n4 False"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\nw = np.array([1, 1])\nb = 5\n\nscores = X @ w        # one dot product per row\nprint(scores)\nprint(scores > b)     # True means \"spam\"\n\nnew = np.array([3, 1])\nprint(new @ w, new @ w > b)",
+   "numpy": "[1 1 3 3 7 7 9 9]\n[False False False False  True  True  True  True]\n4 False"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\nw = np.array([1, 1])\nb = 5\n\nscores = X @ w        # one dot product per row\nprint(scores)\nprint(scores > b)     # True means \"spam\"\n\nnew = np.array([4, 3])\nprint(new @ w, new @ w > b)",
+   "numpy": "[1 1 3 3 7 7 9 9]\n[False False False False  True  True  True  True]\n7 True"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\nw = np.array([1, 1])\nb = 5\n\nscores = X @ w        # one dot product per row\nprint(scores)\nprint(scores > b)     # True means \"spam\"\n\nnew = np.array([0, 6])\nprint(new @ w, new @ w > b)",
+   "numpy": "[1 1 3 3 7 7 9 9]\n[False False False False  True  True  True  True]\n6 True"
+  },
+  {
+   "code": "import numpy as np\n\n# one email per row: links, \"!\" marks\nX = np.array([[1, 0], [0, 1], [1, 2], [2, 1],\n              [4, 3], [3, 4], [5, 4], [4, 5]])\ny = np.array([0, 0, 0, 0, 1, 1, 1, 1])  # 0 = normal, 1 = spam\nw = np.array([1, 1])\nb = 5\n\nscores = X @ w        # one dot product per row\nprint(scores)\nprint(scores > b)     # True means \"spam\"\n\nnew = np.array([6, 0])\nprint(new @ w, new @ w > b)",
+   "numpy": "[1 1 3 3 7 7 9 9]\n[False False False False  True  True  True  True]\n6 True"
+  },
+  {
+   "code": "import numpy as np\n\n# columns: sqft, bedrooms, distance_km (one house per row)\nX = np.array([[1100, 2, 8],\n              [1500, 3, 5],\n              [900, 1, 2],\n              [2000, 4, 12],\n              [1300, 2, 3],\n              [1800, 3, 9],\n              [2400, 4, 6],\n              [1000, 2, 15]])\ny = np.array([265, 370, 248, 440, 335, 418, 560, 205])  # price in $k\n\nF = X[:, [0, 2]] / [1000, 1]   # size in 1000 sqft, distance in km\npricey = y >= 400\nmu_cheap = F[~pricey].mean(axis=0)\nmu_pricey = F[pricey].mean(axis=0)\nw = mu_pricey - mu_cheap\nb = w @ (mu_cheap + mu_pricey) / 2\nprint(np.round(w, 2), np.round(b, 2))\nprint(F @ w > b)\nprint(((F @ w > b) == pricey).sum(), \"of 8 right\")",
+   "numpy": "[0.91 2.4 ] 20.18\n[ True False False  True False  True False  True]\n5 of 8 right"
+  },
+  {
+   "code": "import numpy as np\n\n# columns: sqft, bedrooms, distance_km (one house per row)\nX = np.array([[1100, 2, 8],\n              [1500, 3, 5],\n              [900, 1, 2],\n              [2000, 4, 12],\n              [1300, 2, 3],\n              [1800, 3, 9],\n              [2400, 4, 6],\n              [1000, 2, 15]])\ny = np.array([265, 370, 248, 440, 335, 418, 560, 205])  # price in $k\n\nF = X[:, [0, 2]] / [1000, 1]   # size in 1000 sqft, distance in km\npricey = y >= 400\nmu_cheap = F[~pricey].mean(axis=0)\nmu_pricey = F[pricey].mean(axis=0)\nw = mu_pricey - mu_cheap\ndev_c = F[~pricey] - mu_cheap\ndev_p = F[pricey] - mu_pricey\nS_w = dev_c.T @ dev_c + dev_p.T @ dev_p\nw = np.linalg.solve(S_w, w)   # the scatter correction\nb = w @ (mu_cheap + mu_pricey) / 2\nprint(np.round(w, 2), np.round(b, 2))\nprint(F @ w > b)\nprint(((F @ w > b) == pricey).sum(), \"of 8 right\")",
+   "numpy": "[2.57 0.07] 4.69\n[False False False  True False  True  True False]\n8 of 8 right"
+  }
+ ]
+}

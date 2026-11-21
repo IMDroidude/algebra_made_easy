@@ -131,7 +131,7 @@ export function HouseLineExample() {
       </Readout>
       <p style={{ marginTop: '1rem' }}>
         The slope m is the price of one more square foot (0.22 means about $220), and b is where
-        the line meets the price axis. The best-fit line, found by least squares in lesson 5.1, is
+        the line meets the price axis. The best-fit line, found by least squares in lesson 5.2, is
         about <Tex>{String.raw`\text{price} = ${fmt(BEST.m, 3)}\,\text{sqft} + ${fmt(BEST.b, 1)}`}</Tex>
         . It is a model, and like any model it is a little wrong for every house.
       </p>

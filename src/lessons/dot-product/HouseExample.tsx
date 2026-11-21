@@ -53,7 +53,7 @@ export function HouseExample() {
       <p className="mt-3 text-sm text-muted">
         <code>X @ w</code> takes the dot product of <code>w</code> with every row of{' '}
         <code>X</code> at once, giving one number per house. These weights were picked by hand;{' '}
-        <Link to="/lessons/projection-least-squares">lesson 5.1</Link> shows how to find the best
+        <Link to="/lessons/projection-least-squares">lesson 5.2</Link> shows how to find the best
         ones from the data.
       </p>
     </RunningExample>

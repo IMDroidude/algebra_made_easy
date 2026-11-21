@@ -17,7 +17,7 @@ test('home page starts at the beginning, or skips to vectors', async ({ page }) 
 test('every lesson is marked available and links work', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByText('Coming soon')).toHaveCount(0)
-  await expect(page.getByText('Available', { exact: true })).toHaveCount(21)
+  await expect(page.getByText('Available', { exact: true })).toHaveCount(22)
 })
 
 test('lesson navigation links to the next lesson', async ({ page }) => {
@@ -131,4 +131,15 @@ test('the reference page maps objects and operations to lessons', async ({ page 
   for (let i = 0; i < n; i++) await expect(links.nth(i)).toHaveAttribute('href', /#\/lessons\/[a-z0-9-]+$/)
   await page.getByRole('link', { name: '3.3 Dot product, length and cosine similarity' }).first().click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Dot product, length and cosine similarity')
+})
+
+test('the section bar jumps to a step and marks where you are', async ({ page }) => {
+  await page.goto('/#/lessons/matrices-as-transformations')
+  const bar = page.getByRole('navigation', { name: 'Lesson sections' })
+  await expect(bar.getByRole('button', { name: '1 See' })).toBeVisible()
+  await expect(bar.getByRole('button', { name: 'Houses' })).toBeVisible()
+  await expect(bar.getByRole('button', { name: 'Takeaways' })).toBeVisible()
+  await bar.getByRole('button', { name: '4 Understand' }).click()
+  await expect(bar.getByRole('button', { name: '4 Understand' })).toHaveAttribute('aria-current', 'location')
+  await expect(page.getByRole('heading', { name: 'The arithmetic behind the picture' })).toBeInViewport()
 })

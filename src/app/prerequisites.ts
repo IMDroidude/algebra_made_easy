@@ -119,6 +119,15 @@ export const PREREQUISITES: Record<string, Prerequisites> = {
       'Know that A·B means “B first, then A”',
     ],
   },
+  'spam-filter': {
+    lessons: ['coordinate-plane', 'scalars-and-vectors', 'dot-product', 'shapes-and-transpose'],
+    skills: [
+      'Average a group of vectors, coordinate by coordinate',
+      'Use a dot product as a score along a direction',
+      'Read X @ w as “one dot product per row”',
+      'Helpful, not required: the inverse of a matrix (lesson 4.5)',
+    ],
+  },
   'projection-least-squares': {
     lessons: ['lines-slope-intercept', 'dot-product', 'inverse-rank-null-space'],
     skills: [

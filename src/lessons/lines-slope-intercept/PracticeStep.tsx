@@ -69,7 +69,7 @@ const ITEMS: Challenge[] = [
     insight: (
       <p className="m-0">
         The best possible line here is {bestText(DATA_SETS[2])}. Finding it by formula instead of
-        by hand is <em>least squares</em> (lesson 5.1), and finding it by repeated small nudges is
+        by hand is <em>least squares</em> (lesson 5.2), and finding it by repeated small nudges is
         how neural networks are trained.
       </p>
     ),

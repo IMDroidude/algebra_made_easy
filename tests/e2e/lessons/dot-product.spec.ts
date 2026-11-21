@@ -137,6 +137,6 @@ test('the running example predicts house prices with a dot product', async ({ pa
   await expect(box.getByLabel('Output')).toHaveText(
     '[262. 375. 243. 448. 332. 411. 564. 200.]\n[ 3. -5.  5. -8.  3.  7. -4.  5.]',
   )
-  await box.getByRole('link', { name: 'lesson 5.1' }).click()
+  await box.getByRole('link', { name: 'lesson 5.2' }).click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Projection and least squares')
 })

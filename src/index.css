@@ -97,6 +97,10 @@ body {
   pointer-events: none;
 }
 
+main section {
+  scroll-margin-top: 3.25rem;
+}
+
 .prose-lesson p {
   margin: 0 0 0.9rem;
 }
