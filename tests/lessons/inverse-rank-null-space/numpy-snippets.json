@@ -1,0 +1,577 @@
+{
+ "system": [
+  {
+   "A": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     -1
+    ]
+   ],
+   "b": [
+    3,
+    1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [1, -1]])\nb = np.array([3, 1])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[2. 1.]",
+   "numpy": "2\n[2. 1.]"
+  },
+  {
+   "A": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     1
+    ]
+   ],
+   "b": [
+    3,
+    1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [1, 1]])\nb = np.array([3, 1])\n\nprint(np.linalg.matrix_rank(A))\n# rank < 2: A has no inverse, so\n# np.linalg.solve(A, b) has no single answer",
+   "output": "1",
+   "numpy": "1"
+  },
+  {
+   "A": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "b": [
+    3,
+    6
+   ],
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [2, 2]])\nb = np.array([3, 6])\n\nprint(np.linalg.matrix_rank(A))\n# rank < 2: A has no inverse, so\n# np.linalg.solve(A, b) has no single answer",
+   "output": "1",
+   "numpy": "1"
+  },
+  {
+   "A": [
+    [
+     2,
+     1
+    ],
+    [
+     1,
+     0.5000001
+    ]
+   ],
+   "b": [
+    1,
+    1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[2, 1],\n              [1, 0.5000001]])\nb = np.array([1, 1])\n\nprint(np.linalg.matrix_rank(A))\n# NumPy says rank 2: its cut-off for zero is far\n# smaller than this app's 0.000001",
+   "output": "2",
+   "numpy": "2"
+  },
+  {
+   "A": [
+    [
+     3,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "b": [
+    1,
+    -1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[3, 1],\n              [1, 2]])\nb = np.array([1, -1])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[ 0.6 -0.8]",
+   "numpy": "2\n[ 0.6 -0.8]"
+  },
+  {
+   "A": [
+    [
+     0.5,
+     -1.5
+    ],
+    [
+     2,
+     2.5
+    ]
+   ],
+   "b": [
+    -2,
+    3
+   ],
+   "code": "import numpy as np\n\nA = np.array([[0.5, -1.5],\n              [2, 2.5]])\nb = np.array([-2, 3])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[-0.1176  1.2941]",
+   "numpy": "2\n[-0.1176  1.2941]"
+  },
+  {
+   "A": [
+    [
+     0,
+     0
+    ],
+    [
+     0,
+     0
+    ]
+   ],
+   "b": [
+    0,
+    0
+   ],
+   "code": "import numpy as np\n\nA = np.array([[0, 0],\n              [0, 0]])\nb = np.array([0, 0])\n\nprint(np.linalg.matrix_rank(A))\n# rank < 2: A has no inverse, so\n# np.linalg.solve(A, b) has no single answer",
+   "output": "0",
+   "numpy": "0"
+  },
+  {
+   "A": [
+    [
+     2,
+     0
+    ],
+    [
+     0,
+     0.5
+    ]
+   ],
+   "b": [
+    0,
+    1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.5]])\nb = np.array([0, 1])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[0. 2.]",
+   "numpy": "2\n[0. 2.]"
+  },
+  {
+   "A": [
+    [
+     -3,
+     1
+    ],
+    [
+     1,
+     0
+    ]
+   ],
+   "b": [
+    0,
+    2.5
+   ],
+   "code": "import numpy as np\n\nA = np.array([[-3, 1],\n              [1, 0]])\nb = np.array([0, 2.5])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[2.5 7.5]",
+   "numpy": "2\n[2.5 7.5]"
+  },
+  {
+   "A": [
+    [
+     7,
+     3
+    ],
+    [
+     2,
+     9
+    ]
+   ],
+   "b": [
+    1,
+    1
+   ],
+   "code": "import numpy as np\n\nA = np.array([[7, 3],\n              [2, 9]])\nb = np.array([1, 1])\n\nprint(np.linalg.matrix_rank(A))\nx = np.linalg.solve(A, b)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(x, 4) + 0.0)",
+   "output": "2\n[0.1053 0.0877]",
+   "numpy": "2\n[0.1053 0.0877]"
+  }
+ ],
+ "lowRank": [
+  {
+   "u": [
+    2,
+    1
+   ],
+   "v": [
+    1,
+    -0.5
+   ],
+   "d": 4096,
+   "r": 8,
+   "code": "import numpy as np\n\n# B: a thin column (2×1). A: a thin row (1×2).\nB = np.array([[2], [1]])\nA = np.array([[1, -0.5]])\ndW = B @ A  # a full 2×2 matrix from 4 numbers\nprint(dW)\nprint(np.linalg.matrix_rank(dW))\n\nd, r = 4096, 8\nprint(d * d)      # full d×d update\nprint(2 * d * r)  # B (d×r) plus A (r×d)",
+   "output": "[[ 2.  -1. ]\n [ 1.  -0.5]]\n1\n16777216\n65536",
+   "numpy": "[[ 2.  -1. ]\n [ 1.  -0.5]]\n1\n16777216\n65536"
+  },
+  {
+   "u": [
+    0,
+    1.5
+   ],
+   "v": [
+    -1,
+    0
+   ],
+   "d": 768,
+   "r": 1,
+   "code": "import numpy as np\n\n# B: a thin column (2×1). A: a thin row (1×2).\nB = np.array([[0], [1.5]])\nA = np.array([[-1, 0]])\ndW = B @ A  # a full 2×2 matrix from 4 numbers\nprint(dW)\nprint(np.linalg.matrix_rank(dW))\n\nd, r = 768, 1\nprint(d * d)      # full d×d update\nprint(2 * d * r)  # B (d×r) plus A (r×d)",
+   "output": "[[ 0.   0. ]\n [-1.5  0. ]]\n1\n589824\n1536",
+   "numpy": "[[ 0.   0. ]\n [-1.5  0. ]]\n1\n589824\n1536"
+  },
+  {
+   "u": [
+    0,
+    0
+   ],
+   "v": [
+    1,
+    1
+   ],
+   "d": 4096,
+   "r": 16,
+   "code": "import numpy as np\n\n# B: a thin column (2×1). A: a thin row (1×2).\nB = np.array([[0], [0]])\nA = np.array([[1, 1]])\ndW = B @ A  # a full 2×2 matrix from 4 numbers\nprint(dW)\nprint(np.linalg.matrix_rank(dW))\n\nd, r = 4096, 16\nprint(d * d)      # full d×d update\nprint(2 * d * r)  # B (d×r) plus A (r×d)",
+   "output": "[[0 0]\n [0 0]]\n0\n16777216\n131072",
+   "numpy": "[[0 0]\n [0 0]]\n0\n16777216\n131072"
+  },
+  {
+   "u": [
+    -2,
+    3
+   ],
+   "v": [
+    4,
+    -1
+   ],
+   "d": 768,
+   "r": 4,
+   "code": "import numpy as np\n\n# B: a thin column (2×1). A: a thin row (1×2).\nB = np.array([[-2], [3]])\nA = np.array([[4, -1]])\ndW = B @ A  # a full 2×2 matrix from 4 numbers\nprint(dW)\nprint(np.linalg.matrix_rank(dW))\n\nd, r = 768, 4\nprint(d * d)      # full d×d update\nprint(2 * d * r)  # B (d×r) plus A (r×d)",
+   "output": "[[-8  2]\n [12 -3]]\n1\n589824\n6144",
+   "numpy": "[[-8  2]\n [12 -3]]\n1\n589824\n6144"
+  }
+ ],
+ "normal": [
+  {
+   "points": [
+    [
+     -4,
+     -2.5
+    ],
+    [
+     -2,
+     -0.5
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0.5
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-4, -2, -1, 1, 2, 4])\ny = np.array([-2.5, -0.5, -1, 1, 0.5, 3])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[42  0]\n [ 0  6]]\n[26.   0.5]\n[0.619  0.0833]\n[0.619  0.0833]",
+   "numpy": "[[42  0]\n [ 0  6]]\n[26.   0.5]\n[0.619  0.0833]\n[0.619  0.0833]"
+  },
+  {
+   "points": [
+    [
+     -3,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-3, -1, 1, 3])\ny = np.array([1, 2, -1, 0])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[20  0]\n [ 0  4]]\n[-6  2]\n[-0.3  0.5]\n[-0.3  0.5]",
+   "numpy": "[[20  0]\n [ 0  4]]\n[-6  2]\n[-0.3  0.5]\n[-0.3  0.5]"
+  },
+  {
+   "points": [
+    [
+     -4,
+     -3
+    ],
+    [
+     -3,
+     -1.5
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     0,
+     0.5
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     2.5
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-4, -3, -1, 0, 2, 3])\ny = np.array([-3, -1.5, -1, 0.5, 1, 2.5])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[39 -3]\n [-3  6]]\n[27.  -1.5]\n[0.7 0.1]\n[0.7 0.1]",
+   "numpy": "[[39 -3]\n [-3  6]]\n[27.  -1.5]\n[0.7 0.1]\n[0.7 0.1]"
+  },
+  {
+   "points": [
+    [
+     -4,
+     -2
+    ],
+    [
+     -2,
+     -1
+    ],
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     4,
+     -3
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-4, -2, 0, 2, 4])\ny = np.array([-2, -1, 0, 1, -3])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[40  0]\n [ 0  5]]\n[ 0 -5]\n[ 0. -1.]\n[ 0. -1.]",
+   "numpy": "[[40  0]\n [ 0  5]]\n[ 0 -5]\n[ 0. -1.]\n[ 0. -1.]"
+  },
+  {
+   "points": [
+    [
+     1,
+     0
+    ],
+    [
+     1,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([1, 1, 1, 1])\ny = np.array([0, 2, -1, 3])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n# every x is the same: XtX is singular,\n# so there is no single best line",
+   "output": "[[4 4]\n [4 4]]\n[4 4]",
+   "numpy": "[[4 4]\n [4 4]]\n[4 4]"
+  },
+  {
+   "points": [
+    [
+     -2.5,
+     1
+    ],
+    [
+     0.5,
+     -1.5
+    ],
+    [
+     3,
+     2
+    ],
+    [
+     1.5,
+     0
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-2.5, 0.5, 3, 1.5])\ny = np.array([1, -1.5, 2, 0])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[17.75  2.5 ]\n [ 2.5   4.  ]]\n[2.75 1.5 ]\n[0.112 0.305]\n[0.112 0.305]",
+   "numpy": "[[17.75  2.5 ]\n [ 2.5   4.  ]]\n[2.75 1.5 ]\n[0.112 0.305]\n[0.112 0.305]"
+  },
+  {
+   "points": [
+    [
+     -1,
+     -1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "code": "import numpy as np\n\nx = np.array([-1, 1, 2])\ny = np.array([-1, 1, 2])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\nXtX = X.T @ X\nXty = X.T @ y\nprint(XtX)\nprint(Xty)\n\n# solve (XᵀX) w = Xᵀy; w = [slope, intercept]\nw = np.linalg.solve(XtX, Xty)\n# tidy float noise; + 0.0 turns -0. into 0.\nprint(np.round(w, 4) + 0.0)\n\n# the library call that does all of this for you\nw2, *_ = np.linalg.lstsq(X, y)\nprint(np.round(w2, 4) + 0.0)",
+   "output": "[[6 2]\n [2 3]]\n[6 2]\n[1. 0.]\n[1. 0.]",
+   "numpy": "[[6 2]\n [2 3]]\n[6 2]\n[1. 0.]\n[1. 0.]"
+  }
+ ],
+ "regression": [
+  {
+   "points": [
+    [
+     -4,
+     -3
+    ],
+    [
+     -3,
+     -1.5
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     0,
+     0.5
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     2.5
+    ]
+   ],
+   "xNew": 2.5,
+   "code": "import numpy as np\n\nx = np.array([-4, -3, -1, 0, 2, 3])\ny = np.array([-3, -1.5, -1, 0.5, 1, 2.5])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\n# train: find the weight w and bias b\n(w, b), *_ = np.linalg.lstsq(X, y)\n\n# predict for a new, unseen input\nx_new = 2.5\ny_hat = w * x_new + b\nprint(np.round(y_hat, 4) + 0.0)",
+   "output": "1.85",
+   "numpy": "1.85"
+  },
+  {
+   "points": [
+    [
+     -4,
+     -3
+    ],
+    [
+     -3,
+     -1.5
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     0,
+     0.5
+    ],
+    [
+     2,
+     1
+    ],
+    [
+     3,
+     2.5
+    ]
+   ],
+   "xNew": -4,
+   "code": "import numpy as np\n\nx = np.array([-4, -3, -1, 0, 2, 3])\ny = np.array([-3, -1.5, -1, 0.5, 1, 2.5])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\n# train: find the weight w and bias b\n(w, b), *_ = np.linalg.lstsq(X, y)\n\n# predict for a new, unseen input\nx_new = -4\ny_hat = w * x_new + b\nprint(np.round(y_hat, 4) + 0.0)",
+   "output": "-2.7",
+   "numpy": "-2.7"
+  },
+  {
+   "points": [
+    [
+     -4,
+     -2.5
+    ],
+    [
+     -2,
+     -0.5
+    ],
+    [
+     -1,
+     -1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     0.5
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "xNew": 0,
+   "code": "import numpy as np\n\nx = np.array([-4, -2, -1, 1, 2, 4])\ny = np.array([-2.5, -0.5, -1, 1, 0.5, 3])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\n# train: find the weight w and bias b\n(w, b), *_ = np.linalg.lstsq(X, y)\n\n# predict for a new, unseen input\nx_new = 0\ny_hat = w * x_new + b\nprint(np.round(y_hat, 4) + 0.0)",
+   "output": "0.0833",
+   "numpy": "0.0833"
+  },
+  {
+   "points": [
+    [
+     -1,
+     -1
+    ],
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "xNew": 0,
+   "code": "import numpy as np\n\nx = np.array([-1, 1, 2])\ny = np.array([-1, 1, 2])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\n# train: find the weight w and bias b\n(w, b), *_ = np.linalg.lstsq(X, y)\n\n# predict for a new, unseen input\nx_new = 0\ny_hat = w * x_new + b\nprint(np.round(y_hat, 4) + 0.0)",
+   "output": "0.0",
+   "numpy": "0.0"
+  },
+  {
+   "points": [
+    [
+     -3,
+     1
+    ],
+    [
+     -1,
+     2
+    ],
+    [
+     1,
+     -1
+    ],
+    [
+     3,
+     0
+    ]
+   ],
+   "xNew": 1.5,
+   "code": "import numpy as np\n\nx = np.array([-3, -1, 1, 3])\ny = np.array([1, 2, -1, 0])\nX = np.column_stack([x, np.ones_like(x)])  # rows [x, 1]\n\n# train: find the weight w and bias b\n(w, b), *_ = np.linalg.lstsq(X, y)\n\n# predict for a new, unseen input\nx_new = 1.5\ny_hat = w * x_new + b\nprint(np.round(y_hat, 4) + 0.0)",
+   "output": "0.05",
+   "numpy": "0.05"
+  }
+ ]
+}

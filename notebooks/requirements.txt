@@ -1,0 +1,8 @@
+# Companion notebooks for "Algebra Made Easy"
+numpy>=1.26
+matplotlib>=3.8
+plotly>=5.20
+nbformat>=5.9
+nbconvert>=7.16
+jupyterlab>=4.1
+ipykernel>=6.29

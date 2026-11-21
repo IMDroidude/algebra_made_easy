@@ -1,0 +1,1701 @@
+{
+ "_note": "\"numpy\" is the exact stdout of \"code\" run with NumPy 2.4.6, in the order of cases.ts",
+ "cases": [
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0 -1 -1  0]\n [ 0  0 -1 -1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, 0.259],\n              [-0.259, -0.966]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.966 -0.707  0.259]\n [ 0.    -0.259 -1.225 -0.966]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, 0.5],\n              [-0.5, -0.866]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.866 -0.366  0.5  ]\n [ 0.    -0.5   -1.366 -0.866]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, 0.707],\n              [-0.707, -0.707]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.707  0.     0.707]\n [ 0.    -0.707 -1.414 -0.707]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, 0.866],\n              [-0.866, -0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.5    0.366  0.866]\n [ 0.    -0.866 -1.366 -0.5  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, 0.966],\n              [-0.966, -0.259]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.259  0.707  0.966]\n [ 0.    -0.966 -1.225 -0.259]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [-1, 0]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0  0  1  1]\n [ 0 -1 -1  0]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, 0.966],\n              [-0.966, 0.259]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.259  1.225  0.966]\n [ 0.    -0.966 -0.707  0.259]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0.866],\n              [-0.866, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.5    1.366  0.866]\n [ 0.    -0.866 -0.366  0.5  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, 0.707],\n              [-0.707, 0.707]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.707  1.414  0.707]\n [ 0.    -0.707  0.     0.707]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, 0.5],\n              [-0.5, 0.866]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.866  1.366  0.5  ]\n [ 0.    -0.5    0.366  0.866]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, 0.259],\n              [-0.259, 0.966]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.966  1.225  0.259]\n [ 0.    -0.259  0.707  0.966]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 1 1 0]\n [0 0 1 1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, -0.259],\n              [0.259, 0.966]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.966  0.707 -0.259]\n [ 0.     0.259  1.225  0.966]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, -0.5],\n              [0.5, 0.866]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.866  0.366 -0.5  ]\n [ 0.     0.5    1.366  0.866]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, -0.707],\n              [0.707, 0.707]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.707  0.    -0.707]\n [ 0.     0.707  1.414  0.707]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, -0.866],\n              [0.866, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.5   -0.366 -0.866]\n [ 0.     0.866  1.366  0.5  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, -0.966],\n              [0.966, 0.259]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.     0.259 -0.707 -0.966]\n [ 0.     0.966  1.225  0.259]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [1, 0]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0  0 -1 -1]\n [ 0  1  1  0]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, -0.966],\n              [0.966, -0.259]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.259 -1.225 -0.966]\n [ 0.     0.966  0.707 -0.259]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, -0.866],\n              [0.866, -0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.5   -1.366 -0.866]\n [ 0.     0.866  0.366 -0.5  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, -0.707],\n              [0.707, -0.707]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.707 -1.414 -0.707]\n [ 0.     0.707  0.    -0.707]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, -0.5],\n              [0.5, -0.866]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.866 -1.366 -0.5  ]\n [ 0.     0.5   -0.366 -0.866]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, -0.259],\n              [0.259, -0.966]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    -0.966 -1.225 -0.259]\n [ 0.     0.259 -0.707 -0.966]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0 -1 -1  0]\n [ 0  0 -1 -1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   0.5  0.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   1.5  1.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.25 0.25 0.  ]\n [0.   0.   2.   2.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.5  0.5  0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  0.5 0.5 0. ]\n [0.  0.  0.5 0.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.5  0.5  0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  0.5 0.5 0. ]\n [0.  0.  1.  1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.5  0.5  0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  0.5 0.5 0. ]\n [0.  0.  1.5 1.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.5  0.5  0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  0.5 0.5 0. ]\n [0.  0.  2.  2. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   0.5  0.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   1.5  1.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   0.75 0.75 0.  ]\n [0.   0.   2.   2.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.   0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.  1.  0. ]\n [0.  0.  0.5 0.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.   0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 1 1 0]\n [0 0 1 1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.   0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.  1.  0. ]\n [0.  0.  1.5 1.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.   0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 1 1 0]\n [0 0 2 2]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   0.5  0.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   1.5  1.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.25 1.25 0.  ]\n [0.   0.   2.   2.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.5  1.5  0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.5 1.5 0. ]\n [0.  0.  0.5 0.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.5  1.5  0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.5 1.5 0. ]\n [0.  0.  1.  1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.5  1.5  0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.5 1.5 0. ]\n [0.  0.  1.5 1.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.5  1.5  0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.5 1.5 0. ]\n [0.  0.  2.  2. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   0.5  0.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   1.5  1.5 ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.75 1.75 0.  ]\n [0.   0.   2.   2.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   2.   2.   0.  ]\n [0.   0.   0.25 0.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  2.  2.  0. ]\n [0.  0.  0.5 0.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   2.   2.   0.  ]\n [0.   0.   0.75 0.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 2 2 0]\n [0 0 1 1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.25]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   2.   2.   0.  ]\n [0.   0.   1.25 1.25]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.5]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  2.  2.  0. ]\n [0.  0.  1.5 1.5]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.75]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   2.   2.   0.  ]\n [0.   0.   1.75 1.75]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 2]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 2 2 0]\n [0 0 2 2]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, -1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0  1  1  0]\n [ 0  0 -1 -1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0 -1 -1  0]\n [ 0  0  1  1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [1, 0]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 0 1 1]\n [0 1 1 0]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [-1, 0]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0  0 -1 -1]\n [ 0 -1 -1  0]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.5],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.   1.  -0.5 -1.5]\n [ 0.   0.   1.   1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.25],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    1.   -0.25 -1.25]\n [ 0.    0.    1.    1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0  1  0 -1]\n [ 0  0  1  1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.75],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    1.    0.25 -0.75]\n [ 0.    0.    1.    1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.5],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.   1.   0.5 -0.5]\n [ 0.   0.   1.   1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.25],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[ 0.    1.    0.75 -0.25]\n [ 0.    0.    1.    1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 1 1 0]\n [0 0 1 1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.25],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.25 0.25]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.5],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.  1.5 0.5]\n [0.  0.  1.  1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.75],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   1.75 0.75]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0 1 2 1]\n [0 0 1 1]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.25],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.   1.   2.25 1.25]\n [0.   0.   1.   1.  ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.5],\n              [0, 1]])\n# the corners of the unit square, one per column\nsquare = np.array([[0, 1, 1, 0],\n                   [0, 0, 1, 1]])\n\nprint(A @ square)",
+   "numpy": "[[0.  1.  2.5 1.5]\n [0.  0.  1.  1. ]]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2 -1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 3.  -2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.5  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, 0.259],\n              [-0.259, -0.966]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1.673 -1.484]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, 0.259],\n              [-0.259, -0.966]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 3.5455 -1.638 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, 0.259],\n              [-0.259, -0.966]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.8715  1.3195]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, 0.5],\n              [-0.5, -0.866]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1.232 -1.866]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, 0.5],\n              [-0.5, -0.866]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 3.848 -0.665]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, 0.5],\n              [-0.5, -0.866]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.183  1.049]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, 0.707],\n              [-0.707, -0.707]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-0.707 -2.121]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, 0.707],\n              [-0.707, -0.707]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[3.8885 0.3535]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, 0.707],\n              [-0.707, -0.707]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.414  0.707]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, 0.866],\n              [-0.866, -0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-0.134 -2.232]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, 0.866],\n              [-0.866, -0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[3.665 1.348]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, 0.866],\n              [-0.866, -0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.549  0.317]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, 0.966],\n              [-0.966, -0.259]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 0.448 -2.191]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, 0.966],\n              [-0.966, -0.259]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[3.192  2.2505]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, 0.966],\n              [-0.966, -0.259]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5785 -0.0945]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [-1, 0]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 1 -2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [-1, 0]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[2.5 3. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [-1, 0]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5 -0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, 0.966],\n              [-0.966, 0.259]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 1.484 -1.673]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, 0.966],\n              [-0.966, 0.259]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[1.638  3.5455]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, 0.966],\n              [-0.966, 0.259]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.3195 -0.8715]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0.866],\n              [-0.866, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 1.866 -1.232]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0.866],\n              [-0.866, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[0.665 3.848]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0.866],\n              [-0.866, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.049 -1.183]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, 0.707],\n              [-0.707, 0.707]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 2.121 -0.707]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, 0.707],\n              [-0.707, 0.707]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.3535  3.8885]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, 0.707],\n              [-0.707, 0.707]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.707 -1.414]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, 0.5],\n              [-0.5, 0.866]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 2.232 -0.134]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, 0.5],\n              [-0.5, 0.866]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.348  3.665]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, 0.5],\n              [-0.5, 0.866]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.317 -1.549]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, 0.259],\n              [-0.259, 0.966]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.191 0.448]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, 0.259],\n              [-0.259, 0.966]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.2505  3.192 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, 0.259],\n              [-0.259, 0.966]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.0945 -1.5785]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.   2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5 -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, -0.259],\n              [0.259, 0.966]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.673 1.484]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, -0.259],\n              [0.259, 0.966]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.5455  1.638 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.966, -0.259],\n              [0.259, 0.966]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.8715 -1.3195]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, -0.5],\n              [0.5, 0.866]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.232 1.866]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, -0.5],\n              [0.5, 0.866]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.848  0.665]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.866, -0.5],\n              [0.5, 0.866]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.183 -1.049]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, -0.707],\n              [0.707, 0.707]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.707 2.121]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, -0.707],\n              [0.707, 0.707]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.8885 -0.3535]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.707, -0.707],\n              [0.707, 0.707]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.414 -0.707]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, -0.866],\n              [0.866, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.134 2.232]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, -0.866],\n              [0.866, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.665 -1.348]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, -0.866],\n              [0.866, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.549 -0.317]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, -0.966],\n              [0.966, 0.259]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-0.448  2.191]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, -0.966],\n              [0.966, 0.259]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.192  -2.2505]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.259, -0.966],\n              [0.966, 0.259]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[1.5785 0.0945]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [1, 0]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1  2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [1, 0]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.5 -3. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [1, 0]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[1.5 0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, -0.966],\n              [0.966, -0.259]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1.484  1.673]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, -0.966],\n              [0.966, -0.259]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.638  -3.5455]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.259, -0.966],\n              [0.966, -0.259]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[1.3195 0.8715]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, -0.866],\n              [0.866, -0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1.866  1.232]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, -0.866],\n              [0.866, -0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.665 -3.848]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.5, -0.866],\n              [0.866, -0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[1.049 1.183]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, -0.707],\n              [0.707, -0.707]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2.121  0.707]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, -0.707],\n              [0.707, -0.707]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.3535 -3.8885]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.707, -0.707],\n              [0.707, -0.707]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[0.707 1.414]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, -0.5],\n              [0.5, -0.866]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2.232  0.134]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, -0.5],\n              [0.5, -0.866]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.348 -3.665]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.866, -0.5],\n              [0.5, -0.866]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[0.317 1.549]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, -0.259],\n              [0.259, -0.966]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2.191 -0.448]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, -0.259],\n              [0.259, -0.966]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 2.2505 -3.192 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-0.966, -0.259],\n              [0.259, -0.966]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.0945  1.5785]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2 -1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 3.  -2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, -1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.5  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5  0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75   0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5 0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -0.75 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5  0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75   1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75   3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5 1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75  3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -2.25 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5  1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75   4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5 2. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.75  5.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.25, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -3.   ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.   0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5    0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25  -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.  0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25 -0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.   0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5    1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25  -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1. 1.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5  2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25 -1.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5    3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25  -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5   3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25 -2.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.   1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5    4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25  -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1. 2.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5  5. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.5, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.25 -3.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5  0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25   0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5 0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -0.75 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5  0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25   1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25   3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5 1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25  3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -2.25 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5  1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25   4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5 2. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.25  5.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0.75, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.375 -3.   ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.   0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.     0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5   -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.  0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.    1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5  -0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.   0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.     1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5   -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.   2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5 -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.     3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5   -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.    3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5  -2.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.   1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.     4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5   -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2 2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.  5.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5 -3. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5  0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75   0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5 0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -0.75 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5  0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75   1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75   3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5 1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75  3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -2.25 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5  1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75   4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5 2. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.75  5.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.25, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.625 -3.   ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.   0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5    0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75  -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.  0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75 -0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.   0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5    1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75  -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3. 1.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5  2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75 -1.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5    3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75  -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5   3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75 -2.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.   1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5    4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75  -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3. 2.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.5  5. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.5, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.75 -3.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5  0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25   0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5 0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -0.75 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5  0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25   1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5  1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25   3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5 1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25  3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -2.25 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5  1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25   4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5 2. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.25  5.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1.75, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -3.   ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.   0.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.     0.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.    -0.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.  0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.    1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.   -0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.   0.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.     1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 0.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.    -1.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.   2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.  -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.25]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.   1.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.25]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.     3.125]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.25]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.    -1.875]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.5]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.  1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.5]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.    3.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.5]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.   -2.25]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.75]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4.   1.75]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.75]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.     4.375]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 1.75]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.    -2.625]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 2]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[4 2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 2]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.  5.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[2, 0],\n              [0, 2]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1. -3.]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, -1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[ 2 -1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, -1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.  -2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, -1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[0.5 1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-2  1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[3.  2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[-1, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.5 -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [1, 0]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1 2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [1, 0]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[ 2.5 -3. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, 1],\n              [1, 0]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.5  0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [-1, 0]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[-1 -2]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [-1, 0]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.5  3. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[0, -1],\n              [-1, 0]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.5 -0.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.5],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.5],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.75  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.5],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 2.75 -1.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.25],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[0.75 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.25],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-6.125  2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1.25],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 2.375 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-5.5  2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -1],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 2.  -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.75],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.25 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.75],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.875  2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.75],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.625 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.5],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.5],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-4.25  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.5],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 1.25 -1.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.25],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[1.75 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.25],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.625  2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, -0.25],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.875 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-3.   2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.5 -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.25],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.25 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.25],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-2.375  2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.25],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[ 0.125 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.5],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.5],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.75  2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.5],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.25 -1.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.75],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[2.75 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.75],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-1.125  2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 0.75],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-0.625 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3 1]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[-0.5  2.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.  -1.5]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.25],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.25 1.  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.25],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[0.125 2.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.25],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.375 -1.5  ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.5],\n              [0, 1]])\nv = np.array([2, 1])\n\nprint(A @ v)",
+   "numpy": "[3.5 1. ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.5],\n              [0, 1]])\nv = np.array([-3, 2.5])\n\nprint(A @ v)",
+   "numpy": "[0.75 2.5 ]"
+  },
+  {
+   "code": "import numpy as np\n\nA = np.array([[1, 1.5],\n              [0, 1]])\nv = np.array([0.5, -1.5])\n\nprint(A @ v)",
+   "numpy": "[-1.75 -1.5 ]"
+  }
+ ]
+}
