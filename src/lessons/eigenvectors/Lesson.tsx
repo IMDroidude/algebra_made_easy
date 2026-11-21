@@ -15,6 +15,7 @@ import { apply2, approxEqualVec, scale } from '../../linalg'
 import { characteristic2, eigen2, eigenPairs, lineTest, unitAt } from '../../linalg/eigen'
 import type { Mat2, Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { PRESETS, ROTATION_90 } from './presets'
 import { eigenCode, eigenOutput } from './snippets'
@@ -358,6 +359,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

@@ -63,3 +63,22 @@ describe('Exponents lesson', () => {
     expect(within(step(6)).getByText('0 of 3 solved')).toBeInTheDocument()
   })
 })
+
+describe('running example', () => {
+  const box = () => within(document.querySelector<HTMLElement>('section[aria-labelledby="running-example"]')!)
+
+  it('scores the price model and measures the distance from house B to house G', async () => {
+    renderLesson()
+    const s = box()
+    expect(s.getByText(/Squared errors add up to 3903, so the mean squared error is 487\.875\. House H alone \(error −45\) gives 52% of that total\./)).toBeInTheDocument()
+    expect(s.getAllByRole('row')[8].textContent).toBe('H Country cottage (highlighted)1000205250−452025')
+    expect(s.getByText(/a typical miss of about \$\s*22k/)).toBeInTheDocument()
+    const outputs = () => s.getAllByLabelText('Output')
+    expect(outputs()[0]).toHaveTextContent('487.875')
+    expect(outputs()[1]).toHaveTextContent('[900 1 1] 900.0011111104252')
+    expect(s.getByText(/Squared: 810000 \+ 1 \+ 1 = 810002, so the distance is 900\.001\./)).toBeInTheDocument()
+    await userEvent.click(s.getByLabelText('Measure size in thousands of sqft'))
+    expect(s.getByText(/Squared: 0\.81 \+ 1 \+ 1 = 2\.81, so the distance is 1\.676\./)).toBeInTheDocument()
+    expect(outputs()[1]).toHaveTextContent('[0.9 1. 1. ] 1.676305461424021')
+  })
+})

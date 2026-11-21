@@ -74,3 +74,24 @@ test('recap link opens the lesson it names', async ({ page }) => {
   await recap.getByRole('link', { name: /1\.3/ }).click()
   await expect(page).toHaveURL(/#\/lessons\/3d-space/)
 })
+
+test('running example: centring the houses and switching to square metres', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = page.locator('section[aria-labelledby="running-example"]')
+  await expect(s.getByRole('heading', { name: 'Choosing an origin and units for the houses' })).toBeVisible()
+  await s.getByRole('button', { name: 'The average house' }).click()
+  await expect(s.locator('[aria-live]').first()).toContainText('House A is (−400, −0.625, 0.5)')
+  await s.getByRole('button', { name: 'Square metres' }).click()
+  await expect(s.locator('[aria-live]').first()).toContainText('House A is (−37.2, −0.625, 0.5)')
+  await expect(s.getByText('[102.2 139.4  83.6 185.8 120.8 167.2 223.   92.9]', { exact: false })).toBeVisible()
+})
+
+test('robot arm: frames inside frames, and the check ticks', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = step(page, 5)
+  await s.getByRole('button', { name: 'Robot arm' }).click()
+  await expect(s.getByRole('list', { name: "The cup's coordinates in each frame" })).toContainText('(110, 45)')
+  await s.getByRole('spinbutton', { name: 'cup x in the room' }).fill('8')
+  await s.getByRole('spinbutton', { name: 'cup y in the room' }).fill('4')
+  await expect(s.getByText(/^Right: .* = \(8, 4\)/)).toBeVisible()
+})

@@ -9,6 +9,8 @@ import type { Vec2 } from '../../linalg'
 import { Globe } from './Globe'
 import { Choice } from './LivingRoom'
 import { MapPlane } from './MapPlane'
+import { RobotArm } from './RobotArm'
+import { CHAIN, CUP_IN_GRIPPER } from './frames'
 import {
   CINEMA,
   FILES,
@@ -19,18 +21,20 @@ import {
   ROW_LETTERS,
   chessSquare,
   nearestFruit,
+  pairText,
   seatName,
   seatPair,
   snapFruit,
   snapToSquare,
 } from './positions'
 
-type Tab = 'chess' | 'cinema' | 'world' | 'data'
+type Tab = 'chess' | 'cinema' | 'world' | 'robot' | 'data'
 
 const TABS: { id: Tab; label: string }[] = [
   { id: 'chess', label: 'Chessboard' },
   { id: 'cinema', label: 'Cinema seat' },
   { id: 'world', label: 'Game world & GPS' },
+  { id: 'robot', label: 'Robot arm' },
   { id: 'data', label: 'Fruit as data' },
 ]
 
@@ -51,6 +55,7 @@ export function ApplyStep() {
           {tab === 'chess' && <Chess knight={knight} onChange={setKnight} />}
           {tab === 'cinema' && <Cinema seat={seat} onChange={setSeat} />}
           {tab === 'world' && <World />}
+          {tab === 'robot' && <RobotArm />}
           {tab === 'data' && <FruitChart fruit={fruit} onChange={setFruit} />}
         </>
       }
@@ -112,6 +117,26 @@ export function ApplyStep() {
             directions north and east, units of degrees), but its grid is wrapped around a sphere.
             One degree of longitude is about 111 km at the equator and zero at the poles. They are
             coordinates with a different shape of system.
+          </p>
+        </>
+      )}
+      {tab === 'robot' && (
+        <>
+          <p>
+            A robot keeps <strong>frames inside frames</strong>. A camera on the gripper sees a cup 1 m
+            ahead: {pairText(CUP_IN_GRIPPER)} in the <em>gripper&rsquo;s</em> frame. The gripper is at{' '}
+            {pairText(CHAIN[0].offset)} in the <em>robot&rsquo;s</em> frame, measured from its base. The base
+            is at {pairText(CHAIN[1].offset)} in the <em>room</em>, and the room&rsquo;s corner is at{' '}
+            {pairText(CHAIN[2].offset)} on the building <em>map</em>.
+          </p>
+          <p>
+            To move a position out one frame, add where that frame&rsquo;s origin sits in the next
+            one. Do it three times and the cup goes from gripper to map.
+          </p>
+          <p className="text-sm text-muted">
+            Here every frame points the same way as the room, so converting is just adding offsets
+            (a <em>translation</em>). If the gripper were turned, you would also need a rotation;
+            that comes later, with matrices.
           </p>
         </>
       )}

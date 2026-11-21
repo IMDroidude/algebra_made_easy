@@ -1,4 +1,4 @@
-import { render, screen, within } from '@testing-library/react'
+import { fireEvent, render, screen, within } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 import { beforeAll, describe, expect, it } from 'vitest'
@@ -80,5 +80,23 @@ describe('Lines lesson', () => {
     }
     expect(s.getByText('1 of 4 solved')).toBeInTheDocument()
     expect(s.getByLabelText('Output')).toHaveTextContent('0.0')
+  })
+})
+
+describe('running example', () => {
+  const box = () => within(document.querySelector<HTMLElement>('section[aria-labelledby="running-example"]')!)
+
+  it('fits a line to the houses and shows the boundary on request', async () => {
+    renderLesson()
+    const s = box()
+    expect(s.getByRole('heading', { name: 'A line through the houses' })).toBeInTheDocument()
+    expect(s.getByText(/misses a house’s price by \$66\.38k/)).toBeInTheDocument()
+    fireEvent.change(s.getByLabelText('house line slope m'), { target: { value: '0.22' } })
+    fireEvent.change(s.getByLabelText('house line intercept b'), { target: { value: '30' } })
+    expect(s.getByText(/\$17\.63k: a good fit\./)).toBeInTheDocument()
+    expect(s.getAllByLabelText('Output')[0]).toHaveTextContent('17.625')
+    expect(s.queryByTestId('house-boundary')).toBeNull()
+    await userEvent.click(s.getByLabelText('Use a line as a boundary instead'))
+    expect(s.getByText(/Over \$350k: B, D, F, G\. On the lower-right side of the line: B, D, F, G\. The line splits the two groups perfectly\./)).toBeInTheDocument()
   })
 })

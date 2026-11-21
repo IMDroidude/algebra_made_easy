@@ -111,3 +111,14 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   const width = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(width).toBeLessThanOrEqual(390)
 })
+
+test('the running example shows what two features cannot describe', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'What your features can describe' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box.getByLabel('Output')).toHaveText('[1500    3    5]\n[1500    3    0]')
+  await expect(box.getByRole('columnheader', { name: 'distance to centre (km)' })).toHaveCount(0)
+  await box.getByLabel(/third basis direction/).check()
+  await expect(box.getByRole('columnheader', { name: 'distance to centre (km)' })).toBeVisible()
+  await expect(box.locator('[aria-live]')).toContainText('A is 8 km out and H is 15 km out')
+})

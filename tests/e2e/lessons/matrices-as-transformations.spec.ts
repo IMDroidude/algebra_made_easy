@@ -65,3 +65,15 @@ test('dragging P in step 4 moves P′ with the keyboard', async ({ page }) => {
   await expect(s4.getByText(/P = \(2, 1.5\) is sent to P′ = \(2, 1.5\)/)).toBeVisible()
   await expect(s4.getByLabel('Output')).toHaveText('[2.  1.5]')
 })
+
+test('the running example moves all eight houses with one matrix', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'One matrix moves every house' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box.locator('[aria-live]')).toContainText('Before A: sizes run from 900 to 2400 sqft')
+  await box.getByRole('button', { name: 'Apply A to every house' }).click()
+  await expect(box.locator('[aria-live]')).toContainText('sizes now run from 83.61 to 222.96 m²')
+  await expect(box.getByLabel('Output')).toContainText('[[102.19   2.  ]')
+  await box.getByRole('button', { name: 'Back to sqft' }).click()
+  await expect(box.getByRole('button', { name: 'Apply A to every house' })).toBeEnabled()
+})

@@ -5,7 +5,7 @@ import type { View } from '../../linalg/project3d'
 import { Cube3D, ViewControls } from './Cube3D'
 import type { CubePlane, CubePoint } from './Cube3D'
 import { coord3Text, describeView } from './cube'
-import { GROUPS, PLANES, PLANE_COLOR, SIDE_COLOR, PLANE_ORDER, SPLIT_LABEL_AT, SPLIT_PLANE, SPLIT_RULE, SPLIT_VIEW } from './planes'
+import { GROUPS, PLANES, RELATION, RELATION_OFF, RELATION_ON, relationSum, relationValue, PLANE_COLOR, SIDE_COLOR, PLANE_ORDER, SPLIT_LABEL_AT, SPLIT_PLANE, SPLIT_RULE, SPLIT_VIEW } from './planes'
 import type { PlaneId } from './planes'
 
 /**
@@ -69,6 +69,23 @@ export function PlanesSection() {
           <p>
             You have seen this in 2D already: on a flat plane a line splits the points into two
             sides. One dimension up, a flat sheet does the same job in the room.
+          </p>
+          <p>
+            A plane is also a <strong>relationship among three numbers</strong>. The rule{' '}
+            <strong>
+              {RELATION.a}x + {RELATION.b}y + z = {RELATION.d}
+            </strong>{' '}
+            means: all the points (x, y, z) that satisfy it. Together they form one flat sheet.{' '}
+            {coord3Text(RELATION_ON)} is on it: {relationSum(RELATION_ON)} = {relationValue(RELATION_ON)}.{' '}
+            {coord3Text(RELATION_OFF)} is not: {relationSum(RELATION_OFF)} = {relationValue(RELATION_OFF)}, less
+            than {RELATION.d}, so it is on one side.
+          </p>
+          <p>
+            That is why planes turn up everywhere in machine learning. A plane can{' '}
+            <strong>separate two classes</strong> (the toggle below), <strong>describe a constraint</strong>{' '}
+            (buy x, y and z of three things that cost {RELATION.a}, {RELATION.b} and {RELATION.c} each, and spend exactly{' '}
+            {RELATION.d}), or{' '}
+            <strong>relate features</strong> to each other.
           </p>
         </div>
         <div>

@@ -13,6 +13,7 @@ import { ApplyStep } from './ApplyStep'
 import { Cube3D, PointSliders, ViewControls } from './Cube3D'
 import { AXIS_COLOR, Q, WALL_MASK, WALL_NAME, coord3Text, describeView } from './cube'
 import { DimensionStrip } from './DimensionStrip'
+import { HouseExample } from './HouseExample'
 import { PlanesSection } from './PlanesSection'
 import { PracticeStep } from './PracticeStep'
 import { START, walkSteps } from './walk'
@@ -354,6 +355,7 @@ export function Lesson() {
 
       <PlanesSection />
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <section aria-labelledby="beyond-three" className="border-t border-line py-10">

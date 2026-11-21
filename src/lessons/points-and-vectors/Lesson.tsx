@@ -12,6 +12,7 @@ import { useTween } from '../../lib/useTween'
 import { approxEqualVec, isZero, scale } from '../../linalg'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import {
   A3,
   B3,
@@ -411,6 +412,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
     </article>
   )

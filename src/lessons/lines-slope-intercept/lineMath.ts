@@ -199,3 +199,30 @@ export function halfPlaneInBox(
   })
   return out.length >= 3 ? out : []
 }
+
+/**
+ * The sum NumPy computes for a float array of up to 128 entries: a plain loop
+ * below 8 entries, otherwise eight running lanes added pairwise
+ * ((r0 + r1) + (r2 + r3)) + ((r4 + r5) + (r6 + r7)), then any leftovers. The
+ * order matters for the last digit NumPy prints.
+ */
+export function npSum(values: readonly number[]): number {
+  const n = values.length
+  if (n < 8) {
+    let total = 0
+    for (const v of values) total += v
+    return total
+  }
+  if (n > 128) throw new Error('npSum: only arrays of up to 128 entries are supported')
+  const r = values.slice(0, 8)
+  let i = 8
+  for (; i < n - (n % 8); i += 8) for (let j = 0; j < 8; j++) r[j] += values[i + j]
+  let total = r[0] + r[1] + (r[2] + r[3]) + (r[4] + r[5] + (r[6] + r[7]))
+  for (; i < n; i++) total += values[i]
+  return total
+}
+
+/** Mean of the absolute vertical misses |y − (mx + b)|, in NumPy's summation order. */
+export function meanAbsMiss(m: number, b: number, points: readonly Vec2[]): number {
+  return npSum(residuals(m, b, points).map(Math.abs)) / points.length
+}

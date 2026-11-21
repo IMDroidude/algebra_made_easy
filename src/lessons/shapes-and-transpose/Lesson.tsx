@@ -14,6 +14,7 @@ import { add, matVec, scale, sub } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { PREDICT_M, PREDICT_POINTS, SEE_A, SEE_V } from './data'
 import { DimensionStep } from './DimensionStep'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { ShapePicker } from './ShapePicker'
 import { collisions, numpyMat, pyShape, shapeOf, squash } from './shapes'
@@ -272,6 +273,7 @@ export function Lesson() {
 
       <DimensionStep seeA={SEE_A} />
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

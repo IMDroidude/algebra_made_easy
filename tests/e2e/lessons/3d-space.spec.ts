@@ -164,3 +164,14 @@ test('planes: the floor, a wall and a tilted sheet, each with a point on either 
   await expect(s.getByText(/Turned -50°, tilted 22°/)).toBeVisible()
   expect(errors).toEqual([])
 })
+
+test('running example: houses in the room; dropping distance flattens them onto the back wall', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = page.locator('section[aria-labelledby="running-example"]')
+  await expect(s.getByRole('heading', { name: 'The houses in the room' })).toBeVisible()
+  await expect(s.locator('[data-axis-label="x"]')).toContainText('size')
+  await s.getByRole('button', { name: 'Drop distance' }).click()
+  await expect(s.locator('[aria-live]').first()).toContainText('House A is now just (1100, 2).')
+  await expect(s.getByText('(8, 2)\n[1100    2]')).toBeVisible()
+  await expect(page.locator('section[aria-labelledby="planes-heading"]')).toContainText('(1, 2, 2) is on it: 2·1 + 3·2 + 2 = 10.')
+})

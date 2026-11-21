@@ -20,6 +20,10 @@ Adding the folder with an `index.ts` is all it takes: the lesson appears at `/#/
 
 **When several lessons are being built in parallel, only touch files you created.** Do not edit anything under `src/components/`, `src/lib/`, `src/app/`, existing `src/linalg/` files, `package.json`, or other lessons. If a shared component lacks something, build a local variant in your lesson folder and mention it in your report.
 
+## 1b. The running example: the house dataset
+
+Every lesson includes one `<RunningExample title="…">` section (from `components/RunningExample`) that applies the lesson's tool to the shared houses in `src/data/houses.ts` (8 houses: sqft, bedrooms, distance_km → price in $k; helpers `featureVector`, `featureMatrix`, `prices`, `housesNumpy`, and the `<HouseTable>` component). Use the shared data, never a private copy, so learners meet the same houses in every lesson. Keep it compact (one idea, one visual or table, NumPy with exact output), place it after the Apply step or inside it, and test every number it shows.
+
 ## 2. Page skeleton
 
 ```tsx

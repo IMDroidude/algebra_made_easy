@@ -14,6 +14,7 @@ import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { DATA, PREDICT_DATA, PREDICT_FROM, PREDICT_TO } from './data'
 import { FitDrawing } from './FitDrawing'
+import { HouseExample } from './HouseExample'
 import { ManipulateStep } from './ManipulateStep'
 import { PracticeStep } from './PracticeStep'
 import { lineText } from './text'
@@ -175,6 +176,7 @@ export function Lesson() {
       <PredictStep />
       <UnderstandStep />
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

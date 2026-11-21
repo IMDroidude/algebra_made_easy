@@ -11,6 +11,7 @@ import { approxEqual, isZero } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { Chooser } from './Chooser'
 import { DimensionPicture } from './DimensionPicture'
+import { HouseExample } from './HouseExample'
 import { LinePlane } from './LinePlane'
 import {
   PREDICT_ORIGIN_FROM,
@@ -302,6 +303,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <section aria-labelledby="whats-next" className="border-t border-line py-10">

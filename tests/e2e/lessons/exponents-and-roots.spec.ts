@@ -112,6 +112,17 @@ test('practice challenges tick from the live point', async ({ page }) => {
   await expect(s.getByText('2 of 3 solved')).toBeVisible()
 })
 
+test('running example: squared error on the houses and a house distance', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.locator('section[aria-labelledby="running-example"]')
+  await expect(box.getByLabel('Output', { exact: true }).first()).toHaveText(
+    '[ -7.  10.  20. -30.  19.  -8.   2. -45.]\n[  49.  100.  400.  900.  361.   64.    4. 2025.]\n487.875',
+  )
+  await expect(box.getByLabel('Output', { exact: true }).nth(1)).toHaveText('[900   1   1]\n900.0011111104252')
+  await box.getByLabel('Measure size in thousands of sqft').check()
+  await expect(box.getByLabel('Output', { exact: true }).nth(1)).toHaveText('[0.9 1.  1. ]\n1.676305461424021')
+})
+
 test('no horizontal scroll on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto(LESSON)

@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { isInteger, numpyPrint } from '../../../src/lib/format'
+import { HOUSES, prices } from '../../../src/data/houses'
+import { fmt, isInteger, numpyPrint } from '../../../src/lib/format'
 import {
   CHECKS,
   RULE_2X_PLUS_1,
@@ -11,6 +12,7 @@ import {
   numpyExpr,
   points,
   range,
+  roundTo,
   ruleTex,
   ruleText,
   solvedChecks,
@@ -80,20 +82,36 @@ describe('NumPy outputs (checked against real NumPy 2.4)', () => {
     expect(out(0.5, 0)).toBe('[-1.5 -1.  -0.5  0.   0.5  1.   1.5]')
   })
 
-  it('the house-price model on np.array([1, 1.5, 2, 3])', () => {
-    const sizes = [1, 1.5, 2, 3]
+  it('the house-price model on the shared houses (checked against NumPy 2)', () => {
+    const sqft = HOUSES.map((h) => h.sqft)
     const run = (m: number, b: number) =>
       numpyPrint(
-        sizes.map((x) => apply({ m, b }, x)),
-        false,
+        sqft.map((x) => apply({ m, b }, x)),
+        isInteger(m, b),
       )
-    expect(run(2, 1)).toBe('[3. 4. 5. 7.]')
-    expect(run(2.5, 0.5)).toBe('[3.   4.25 5.5  8.  ]')
-    expect(run(2, 0)).toBe('[2. 3. 4. 6.]')
+    expect(run(0.22, 30)).toBe('[272. 360. 228. 470. 316. 426. 558. 250.]')
+    expect(run(0.25, 0)).toBe('[275. 375. 225. 500. 325. 450. 600. 250.]')
+    expect(run(0.2, 50)).toBe('[270. 350. 230. 450. 310. 410. 530. 250.]')
+    expect(run(1, 0)).toBe('[1100 1500  900 2000 1300 1800 2400 1000]')
+    expect(numpyExpr({ m: 0.22, b: 30 }, 'sqft')).toBe('0.22 * sqft + 30')
   })
 
-  it('the house-price model errors', () => {
-    expect(errors({ m: 2, b: 1 }, [1, 1.5, 2, 3], [3, 4, 5.5, 7])).toEqual([0, 0, -0.5, 0])
+  it('the house-price model errors (prediction minus actual)', () => {
+    const err = (m: number, b: number) =>
+      numpyPrint(
+        errors({ m, b }, HOUSES.map((h) => h.sqft), prices()),
+        isInteger(m, b),
+      )
+    expect(err(0.22, 30)).toBe('[  7. -10. -20.  30. -19.   8.  -2.  45.]')
+    expect(err(0.25, 0)).toBe('[ 10.   5. -23.  60. -10.  32.  40.  45.]')
+    expect(err(1, 0)).toBe('[ 835 1130  652 1560  965 1382 1840  795]')
+    expect(fmt(Math.max(...errors({ m: 0.22, b: 30 }, HOUSES.map((h) => h.sqft), prices()).map(Math.abs)))).toBe('45')
+  })
+
+  it('rounds typed weights to two decimals', () => {
+    expect(roundTo(0.2173)).toBe(0.22)
+    expect(roundTo(-0.004)).toBe(0)
+    expect(Object.is(roundTo(-0.004), -0)).toBe(false)
   })
 })
 

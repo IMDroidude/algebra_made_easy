@@ -102,6 +102,19 @@ test('practice challenges tick from the live line', async ({ page }) => {
   await expect(s.getByLabel('Output', { exact: true })).toHaveText('0.3125')
 })
 
+test('running example: a line through the houses, and a boundary', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.locator('section[aria-labelledby="running-example"]')
+  await expect(box.getByRole('heading', { name: 'A line through the houses' })).toBeVisible()
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText('66.375')
+  await box.getByLabel('house line slope m', { exact: true }).fill('0.22')
+  await box.getByLabel('house line intercept b', { exact: true }).fill('30')
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText('17.625')
+  await expect(box.getByText(/\$17\.63k: a good fit/)).toBeVisible()
+  await box.getByLabel('Use a line as a boundary instead').check()
+  await expect(box.getByText('The line splits the two groups perfectly.', { exact: false })).toBeVisible()
+})
+
 test('no horizontal scroll on a phone', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 })
   await page.goto(LESSON)

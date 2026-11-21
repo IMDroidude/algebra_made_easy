@@ -83,3 +83,15 @@ export const GROUPS: { name: string; at: Vec3 }[] = [
   { name: 'B4', at: [0.5, 1, 3] },
   { name: 'B5', at: [1.5, 2, 4.5] },
 ]
+
+/** A plane written as a relationship among three quantities: a·x + b·y + c·z = d. */
+export const RELATION = { a: 2, b: 3, c: 1, d: 10 } as const
+/** A point that satisfies the relationship, and one that does not. */
+export const RELATION_ON: Vec3 = [1, 2, 2]
+export const RELATION_OFF: Vec3 = [1, 1, 1]
+
+/** a·x + b·y + c·z for a point: equal to d exactly when the point is on the plane. */
+export const relationValue = ([x, y, z]: Vec3) => RELATION.a * x + RELATION.b * y + RELATION.c * z
+
+/** "2·1 + 3·2 + 2" for a point. */
+export const relationSum = ([x, y, z]: Vec3) => `${RELATION.a}·${x} + ${RELATION.b}·${y} + ${z}`

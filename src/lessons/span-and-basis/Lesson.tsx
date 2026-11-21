@@ -14,6 +14,7 @@ import { combine2, rank2 } from '../../linalg/span'
 import type { Vec2 } from '../../linalg'
 import { numpyPrint as numpyPrint1d } from '../../lib/format'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { SpanLayer } from './SpanLayer'
 import { numpyCombine } from './numpyMath'
@@ -300,6 +301,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

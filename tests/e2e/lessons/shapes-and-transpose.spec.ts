@@ -92,3 +92,20 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   const sw = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(sw).toBeLessThanOrEqual(390)
 })
+
+const HOUSE_TITLE = 'Eight houses, three features: X is 8 × 3'
+
+test('running example: X @ w, X @ W.T and the error with X @ W', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: HOUSE_TITLE })
+  const check = box.getByTestId('house-shape-check')
+  await expect(check).toContainText('(8, 3) @ (3,)')
+  await expect(box.getByLabel('Output')).toContainText('[262. 375. 243. 448. 332. 411. 564. 200.]')
+  await box.getByRole('button', { name: 'X @ W.T' }).click()
+  await expect(check).toContainText('shape (8, 2)')
+  await expect(box.getByLabel('Output')).toContainText('(8, 2)')
+  await box.getByRole('button', { name: 'X @ W', exact: true }).click()
+  await expect(check).toContainText('NumPy refuses')
+  await expect(box.getByLabel('Output')).toContainText('ValueError: matmul: Input operand 1 has a mismatch')
+  for (let n = 1; n <= 6; n++) await expect(page.locator(`section[aria-labelledby="step-${n}"]`)).toBeVisible()
+})

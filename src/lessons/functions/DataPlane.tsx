@@ -12,17 +12,22 @@ export function DataPlane({
   y,
   height = 340,
   label,
+  xLines = 1,
+  yLines = 1,
 }: {
   children?: ReactNode
   x: [number, number]
   y: [number, number]
   height?: number
   label: string
+  /** Spacing of the grid lines (and axis numbers) along each axis. */
+  xLines?: number
+  yLines?: number
 }) {
   return (
     <div role="group" aria-label={label} className="overflow-hidden rounded-xl border border-line">
       <Mafs height={height} pan={false} zoom={false} viewBox={{ x, y, padding: 0 }} preserveAspectRatio={false}>
-        <Coordinates.Cartesian subdivisions={false} />
+        <Coordinates.Cartesian subdivisions={false} xAxis={{ lines: xLines }} yAxis={{ lines: yLines }} />
         {children}
       </Mafs>
     </div>

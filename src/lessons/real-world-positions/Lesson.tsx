@@ -9,6 +9,7 @@ import { COLOR } from '../../lib/palette'
 import { useTween } from '../../lib/useTween'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { DirChoice, LivingRoom, OriginChoice, UnitChoice } from './LivingRoom'
 import { PracticeStep } from './PracticeStep'
 import { Recap } from './Recap'
@@ -301,6 +302,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
       <Recap />
     </article>

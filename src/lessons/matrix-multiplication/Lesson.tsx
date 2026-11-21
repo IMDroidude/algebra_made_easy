@@ -15,6 +15,7 @@ import { useTween } from '../../lib/useTween'
 import { apply2, approxEqual, approxEqualVec, columns2, isZero, mul2 } from '../../linalg'
 import type { Mat2, Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import {
   PREDICT_A,
   PREDICT_B,
@@ -413,6 +414,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

@@ -14,6 +14,7 @@ import { isZero } from '../../linalg'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { GraphPlane } from './GraphPlane'
+import { HouseExample } from './HouseExample'
 import {
   diagonalSnap,
   lerp,
@@ -399,6 +400,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
     </article>
   )

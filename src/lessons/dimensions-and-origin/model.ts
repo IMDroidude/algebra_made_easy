@@ -1,5 +1,6 @@
 import { approxEqual, isZero } from '../../linalg'
 import type { Vec2 } from '../../linalg'
+import { FEATURES, HOUSES, featureVector, housesNumpy } from '../../data/houses'
 import { npArray } from '../../lib/numpy'
 
 /**
@@ -180,3 +181,57 @@ export const houseDrawing = (k: number) => HOUSE.slice(0, k).map((f) => (f.value
 
 /** "(120, 3, 15)". */
 export const houseText = (k: number) => `(${houseValues(k).join(', ')})`
+
+// ---------------------------------------------------------------------------
+// Running example: one house from the shared dataset, one feature at a time.
+
+/** House A, the first house of the course's dataset. */
+export const HOUSE_A = HOUSES[0]
+
+/** Which features are measured, in order: 1, 2 or 3 of them. */
+export const RUNNING_STEPS = [
+  [1, 'size'],
+  [2, '+ bedrooms'],
+  [3, '+ distance'],
+] as const
+
+/** House A as a point with its first `k` features: (1100), (1100, 2), (1100, 2, 8). */
+export const houseAPoint = (k: number) => featureVector(HOUSE_A).slice(0, k)
+
+/** "(1100, 2, 8)". */
+export const houseAText = (k: number) => `(${houseAPoint(k).join(', ')})`
+
+/** NumPy code for the whole dataset, with exactly what it prints. */
+export function housesCode(): { code: string; output: string } {
+  const code = [
+    'import numpy as np',
+    '',
+    housesNumpy(),
+    '',
+    'print(X[0])         # house A: one point, 3 numbers',
+    'print(X[0].shape)   # 3 numbers: 3 dimensions',
+    'print(X.shape)      # 8 houses, 3 features each',
+    "print(y[0])         # house A's price, kept apart",
+  ].join('\n')
+  const output = [
+    npArray(featureVector(HOUSE_A), true),
+    `(${FEATURES.length},)`,
+    `(${HOUSES.length}, ${FEATURES.length})`,
+    String(HOUSE_A.priceK),
+  ].join('\n')
+  return { code, output }
+}
+
+/** The dimension ladder: how many numbers, what the point looks like, where it shows up. */
+export const LADDER = [
+  { dims: '1D', point: 'x = 5', use: 'one feature, like a house’s size' },
+  { dims: '2D', point: '(x, y)', use: 'a dataset with two features; a map' },
+  { dims: '3D', point: '(x, y, z)', use: 'spatial data, 3D graphics, robotics' },
+  { dims: 'n-D', point: '(x₁, x₂, …, xₙ)', use: 'embeddings and feature vectors in AI' },
+] as const
+
+/** Largest value drawn on each house axis, so house A fits the small pictures (0 to 4 units). */
+const HOUSE_AXIS_MAX = [2500, 5, 16]
+
+/** House A's first `k` features in drawing units. Each axis has its own scale. */
+export const houseADrawing = (k: number) => houseAPoint(k).map((v, i) => (v / HOUSE_AXIS_MAX[i]) * 4)

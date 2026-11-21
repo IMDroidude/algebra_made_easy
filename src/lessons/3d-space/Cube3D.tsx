@@ -34,7 +34,11 @@ export type CubePoint = {
   color: string
   /** Drawn larger and with its coordinates always shown. */
   highlight?: boolean
+  /** What the hover box and the highlight label show instead of the drawn coordinates (for scaled data). */
+  text?: string
 }
+
+type Axis = 'x' | 'y' | 'z'
 
 /** A flat plane drawn through the room: solid inside the room, faint and dashed just outside it. */
 export type CubePlane = {
@@ -87,6 +91,8 @@ export function Cube3D({
   points = [],
   planes = [],
   height = 620,
+  axisNames,
+  axisTicks,
 }: {
   label: string
   view: View
@@ -103,6 +109,10 @@ export function Cube3D({
   /** Flat planes through the room. Points on the far side of the first one are drawn behind it. */
   planes?: CubePlane[]
   height?: number
+  /** Replace the axis names (width, height, depth), e.g. for data axes. */
+  axisNames?: Partial<Record<Axis, string>>
+  /** Text for the tick at drawing unit k on an axis, for scaled data. Defaults to k. */
+  axisTicks?: Partial<Record<Axis, (k: number) => string>>
 }) {
   const svgRef = useRef<SVGSVGElement>(null)
   const drag = useRef<
@@ -226,7 +236,7 @@ export function Cube3D({
   )
 
   const axisEnd = S + 1.1
-  const axes: { name: 'x' | 'y' | 'z'; dir: Vec3 }[] = [
+  const axes: { name: Axis; dir: Vec3 }[] = [
     { name: 'x', dir: [1, 0, 0] },
     { name: 'y', dir: [0, 1, 0] },
     { name: 'z', dir: [0, 0, 1] },
@@ -243,7 +253,7 @@ export function Cube3D({
     return (
       <g
         key={p.label}
-        onPointerEnter={() => setHover({ at: p.at, text: `${p.label} ${coord3Text(p.at)}` })}
+        onPointerEnter={() => setHover({ at: p.at, text: `${p.label} ${p.text ?? coord3Text(p.at)}` })}
         onPointerLeave={() => setHover(null)}
       >
         <circle
@@ -346,7 +356,7 @@ export function Cube3D({
                       dominantBaseline="central"
                       style={{ fill: 'var(--muted)' }}
                     >
-                      {k}
+                      {axisTicks?.[name]?.(k) ?? k}
                     </text>
                   </g>
                 ) : null
@@ -364,7 +374,7 @@ export function Cube3D({
                     {name}
                   </tspan>
                   <tspan fontSize={12} fontWeight={600} dx={4}>
-                    {AXIS_INFO[name].name}
+                    {axisNames?.[name] ?? AXIS_INFO[name].name}
                   </tspan>
                 </text>
               )}
@@ -436,7 +446,7 @@ export function Cube3D({
         {sorted
           .filter((p) => p.highlight)
           .map((p) => (
-            <PointLabel key={p.label} at={at(p.at)} text={`${p.label} ${coord3Text(p.at)}`} color={p.color} />
+            <PointLabel key={p.label} at={at(p.at)} text={`${p.label} ${p.text ?? coord3Text(p.at)}`} color={p.color} />
           ))}
 
         {point && (

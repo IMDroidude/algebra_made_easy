@@ -14,6 +14,7 @@ import { add, angleDeg, norm, scale, sub } from '../../linalg'
 import { cleanZero2, isZeroVec } from '../../linalg/span'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { VectorOps } from './VectorOps'
 import { hasNegativeZero, numpyPrint1d } from './numpyOut'
@@ -318,6 +319,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

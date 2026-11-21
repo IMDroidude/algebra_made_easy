@@ -92,3 +92,19 @@ test('practice: a zero query makes attention uniform', async ({ page }) => {
   await expect(s.getByText('1 of 3 solved')).toBeVisible()
   await expect(s.getByText(/All three scores are equal/)).toBeVisible()
 })
+
+test('the running example applies the lesson to the house dataset', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'Similar houses vote on the price' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box.getByText('Running example · the house dataset')).toBeVisible()
+  await expect(box.getByText(/the estimate, \$480k, lands between their prices/)).toBeVisible()
+  await expect(box.getByText(/W_Q, W_K and W_V/)).toBeVisible()
+  await expect(box.getByLabel('Output')).toContainText('[0.01 0.04 0.   0.38 0.01 0.09 0.44 0.02]')
+  // It sits between the Apply step and the Practice step.
+  const order = await page.evaluate(() => {
+    const ids = [...document.querySelectorAll('section[aria-labelledby]')].map((s) => s.getAttribute('aria-labelledby'))
+    return ids.indexOf('running-example') - ids.indexOf('step-5')
+  })
+  expect(order).toBe(1)
+})

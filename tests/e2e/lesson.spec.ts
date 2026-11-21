@@ -118,3 +118,17 @@ test('each lesson shows its prerequisites, linking to earlier lessons', async ({
   await box.getByRole('link', { name: /Matrices as transformations/ }).click()
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Matrices as transformations')
 })
+
+test('the reference page maps objects and operations to lessons', async ({ page }) => {
+  await page.goto('/')
+  await page.getByRole('link', { name: 'Reference', exact: true }).click()
+  await expect(page.getByRole('heading', { name: 'What each object means' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'Operation-to-scenario map' })).toBeVisible()
+  // every lesson link on the page points at a lesson that exists
+  const links = page.locator('main table a')
+  const n = await links.count()
+  expect(n).toBeGreaterThan(20)
+  for (let i = 0; i < n; i++) await expect(links.nth(i)).toHaveAttribute('href', /#\/lessons\/[a-z0-9-]+$/)
+  await page.getByRole('link', { name: '3.3 Dot product, length and cosine similarity' }).first().click()
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Dot product, length and cosine similarity')
+})

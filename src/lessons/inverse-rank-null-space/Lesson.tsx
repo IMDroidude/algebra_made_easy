@@ -11,6 +11,7 @@ import { useTween } from '../../lib/useTween'
 import { IDENTITY2, apply2, columns2, inverse2, lerp2 } from '../../linalg'
 import { nullSpace2, thereAndBack2 } from '../../linalg/systems'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { PREDICT_A, PREDICT_POINTS, SEE_A } from './data'
 import { FShape } from './FShape'
 import { PracticeStep } from './PracticeStep'
@@ -217,6 +218,7 @@ export function Lesson() {
       <PredictStep />
       <SystemsStep />
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

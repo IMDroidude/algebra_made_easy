@@ -225,3 +225,16 @@ test('step 2: pinned points fill a table and can be joined into a shape', async 
   await s.getByRole('button', { name: 'Clear pins' }).click()
   await expect(s.getByRole('table')).toHaveCount(0)
 })
+
+test('running example: eight houses on a plane, G top-right, hover shows coordinates', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = page.locator('section[aria-labelledby="running-example"]')
+  await expect(s.getByRole('heading', { name: 'Eight houses on a plane' })).toBeVisible()
+  await expect(s.locator('[data-house]')).toHaveCount(8)
+  await expect(readout(s)).toContainText('House G (Townhouse) is the point (2400, 560)')
+  await s.getByRole('button', { name: 'B', exact: true }).click()
+  await expect(readout(s)).toContainText('House B (Corner house) is the point (1500, 370)')
+  await s.locator('[data-house="A"] circle[fill="transparent"]').hover()
+  await expect(s.locator('.coord-tooltip')).toHaveText('x = 1100, y = 265')
+  await expect(s.getByText('(8, 2)\n[1500  370]')).toBeVisible()
+})

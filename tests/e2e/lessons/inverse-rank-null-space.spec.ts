@@ -73,3 +73,15 @@ test('practice challenges tick from the live matrix', async ({ page }) => {
   await expect(s.getByText('2 of 4 solved')).toBeVisible()
   await expect(s.getByText(/Null space/).first()).toBeVisible()
 })
+
+const HOUSE_TITLE = 'A column that adds nothing, and weights from three houses'
+
+test('running example: the m² column keeps rank 3 and solve recovers the weights', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: HOUSE_TITLE })
+  await expect(box.getByTestId('house-rank')).toHaveText('3')
+  await expect(box.getByText(/w = \(0\.2, 15, -6\)/)).toBeVisible()
+  await expect(box.getByRole('row', { name: /Corner house/ })).toContainText('139.35')
+  await expect(box.getByLabel('Output')).toHaveText('(8, 4)\n3 3\n[ 0.2 15.  -6. ]')
+  for (let n = 1; n <= 6; n++) await expect(page.locator(`section[aria-labelledby="step-${n}"]`)).toBeVisible()
+})

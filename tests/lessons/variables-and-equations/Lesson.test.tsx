@@ -91,3 +91,18 @@ describe('Variables and equations lesson', () => {
     expect(s.getByText('2 of 4 solved')).toBeInTheDocument()
   })
 })
+
+describe('running example', () => {
+  const box = () => within(document.querySelector('section[aria-labelledby="running-example"]') as HTMLElement)
+
+  it('solves w from house B and switches house on demand', async () => {
+    renderLesson()
+    const s = box()
+    expect(s.getByRole('heading', { name: 'One house, one unknown' })).toBeInTheDocument()
+    expect(s.getByText(/by up to 53 \(\$k\) for house D/)).toBeInTheDocument()
+    expect(s.getByLabelText('Output')).toHaveTextContent('0.24666666666666667 [271. 370. 222. 493. 321. 444. 592. 247.]')
+    await userEvent.click(s.getByRole('button', { name: 'Solve from house H' }))
+    expect(s.getByText('w = 0.205, solved from house H, tried on every house')).toBeInTheDocument()
+    expect(s.getByLabelText('Output')).toHaveTextContent('0.205 [226. 308. 184. 410. 266. 369. 492. 205.]')
+  })
+})

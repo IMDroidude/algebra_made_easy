@@ -13,6 +13,7 @@ import { approxEqualVec } from '../../linalg'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { BoundarySection } from './BoundarySection'
+import { HouseLineExample } from './HouseLineExample'
 import {
   interceptThrough,
   lerp,
@@ -443,6 +444,7 @@ export function Lesson() {
 
       <ApplyStep />
       <BoundarySection />
+      <HouseLineExample />
       <PracticeStep />
     </article>
   )

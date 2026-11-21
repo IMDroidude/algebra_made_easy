@@ -9,6 +9,7 @@ import { COLOR } from '../../lib/palette'
 import { attention, closestByAngle } from '../../linalg/attention'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import {
   EXTENT,
   QUERY_COLOR,
@@ -257,6 +258,8 @@ export function Lesson() {
         onChangeV={setV}
         onChangeQ={setQ}
       />
+
+      <HouseExample />
 
       <PracticeStep />
 

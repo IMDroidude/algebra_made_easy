@@ -13,6 +13,7 @@ import { useTween } from '../../lib/useTween'
 import { IDENTITY2, columns2, det2, fromColumns2, isSingular2, lerp2 } from '../../linalg'
 import type { Mat2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { SquareImage } from './SquareImage'
 import { UnderstandStep } from './UnderstandStep'
@@ -248,6 +249,7 @@ export function Lesson() {
 
       <UnderstandStep />
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

@@ -93,3 +93,13 @@ test('no horizontal scrolling at phone width', async ({ page }) => {
   )
   expect(overflow).toBeLessThanOrEqual(0)
 })
+
+test('running example: two steps on the houses are one matrix, and order matters', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'Two steps on the houses, one matrix' })
+  await expect(box).toBeVisible()
+  await expect(box.getByText(/the space score is 169\.35 either way/)).toBeVisible()
+  await expect(box.getByRole('row', { name: /Corner house/ })).toContainText('142.14')
+  await expect(box.getByLabel('Output')).toHaveText('[169.35    3.     -3.107]\n[169.35    3.     -3.107]\n[142.137   3.     -3.107]')
+  for (let n = 1; n <= 6; n++) await expect(page.locator(`section[aria-labelledby="step-${n}"]`)).toBeVisible()
+})

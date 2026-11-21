@@ -107,3 +107,15 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   const width = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(width).toBeLessThanOrEqual(390)
 })
+
+test('running example: house A gains one number per feature', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = page.locator('section[aria-labelledby="running-example"]')
+  await expect(s.getByRole('heading', { name: 'One house, one more number at a time' })).toBeVisible()
+  await s.getByRole('button', { name: '+ bedrooms' }).click()
+  await expect(readout(s)).toHaveText('House A is the point (1100, 2): 2 numbers, so a point in 2 dimensions.')
+  await s.getByRole('button', { name: '+ distance' }).click()
+  await expect(s.getByRole('img', { name: /House A in 3 dimensions/ })).toBeVisible()
+  await expect(s.getByText('[1100    2    8]\n(3,)\n(8, 3)\n265')).toBeVisible()
+  await expect(step(page, 5).getByRole('table', { name: 'The dimension ladder' })).toBeVisible()
+})

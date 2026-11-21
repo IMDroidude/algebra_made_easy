@@ -10,6 +10,7 @@ import { approxEqual, isZero } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { BalanceScale } from './BalanceScale'
 import { EquationSolver } from './EquationSolver'
+import { HouseExample } from './HouseExample'
 import { PracticeStep } from './PracticeStep'
 import { applyOp, eq, equationTex, isBalanced, equationText, opLabel, pyFloat, recipe, replay, solve } from './equation'
 import type { Equation, Move } from './equation'
@@ -297,6 +298,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
     </article>
   )

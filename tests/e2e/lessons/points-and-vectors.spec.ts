@@ -86,3 +86,12 @@ test('practice challenges tick from the keyboard', async ({ page }) => {
   await expect(s.getByText('2 of 3 solved')).toBeVisible()
   await expect(s.getByText(/zero vector/).first()).toBeVisible()
 })
+
+test('running example: B − A and a renovation are vectors', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = page.locator('section[aria-labelledby="running-example"]')
+  await expect(s.getByRole('heading', { name: 'How two houses differ is a vector' })).toBeVisible()
+  await expect(s).toContainText('B − A = (400, 1, −3)')
+  await expect(s.getByRole('table', { name: 'House A plus a renovation' })).toContainText('1300')
+  await expect(s.getByText('[400   1  -3]\n[1300    3    8]')).toBeVisible()
+})

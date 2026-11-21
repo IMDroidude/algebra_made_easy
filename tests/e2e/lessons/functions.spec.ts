@@ -62,10 +62,22 @@ test('editing the rule updates table, readout and NumPy output', async ({ page }
 test('the model predictions follow w and b', async ({ page }) => {
   await page.goto(LESSON)
   const s = step(page, 5)
-  await expect(s.getByLabel('Output', { exact: true })).toHaveText('[3. 4. 5. 7.]')
-  await s.getByLabel('weight w').fill('2.5')
-  await s.getByLabel('bias b').fill('0.5')
-  await expect(s.getByLabel('Output', { exact: true })).toHaveText('[3.   4.25 5.5  8.  ]')
+  await expect(s.getByLabel('Output', { exact: true })).toHaveText('[272. 360. 228. 470. 316. 426. 558. 250.]')
+  await s.getByLabel('weight w').fill('0.25')
+  await s.getByLabel('bias b').fill('0')
+  await expect(s.getByLabel('Output', { exact: true })).toHaveText('[275. 375. 225. 500. 325. 450. 600. 250.]')
+})
+
+test('running example: the model as a table of all eight houses', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.locator('section[aria-labelledby="running-example"]')
+  await expect(box.getByRole('heading', { name: 'The model as a table: f(sqft) for every house' })).toBeVisible()
+  await expect(box.getByRole('row')).toHaveCount(9)
+  await expect(box.getByRole('row').nth(8)).toContainText('250')
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText('[  7. -10. -20.  30. -19.   8.  -2.  45.]')
+  await step(page, 5).getByLabel('bias b').fill('0')
+  await step(page, 5).getByLabel('weight w').fill('0.25')
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText('[ 10.   5. -23.  60. -10.  32.  40.  45.]')
 })
 
 test('practice challenges tick from the live rule', async ({ page }) => {

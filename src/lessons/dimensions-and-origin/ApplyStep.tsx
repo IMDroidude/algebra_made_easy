@@ -3,7 +3,7 @@ import { NumpySnippet } from '../../components/NumpySnippet'
 import { Readout, Step } from '../../components/ui'
 import { Chooser } from './Chooser'
 import { DimensionPicture } from './DimensionPicture'
-import { HOUSE, featureText, houseCode, houseDrawing, houseText } from './model'
+import { HOUSE, LADDER, featureText, houseCode, houseDrawing, houseText } from './model'
 import type { Dims } from './model'
 
 const OPTIONS = HOUSE.map((_, i) => [i + 1, `${i + 1}`] as const)
@@ -77,6 +77,28 @@ export function ApplyStep() {
         This is exactly how AI models see data. Every piece of data has a number of dimensions: one
         per measured feature. A spreadsheet row with 300 columns is a point in 300 dimensions.
       </p>
+      <div className="mb-4 overflow-x-auto">
+        <table className="w-full border-collapse text-sm">
+          <caption className="mb-1 text-left font-semibold">The dimension ladder</caption>
+          <thead>
+            <tr className="border-b border-line text-left">
+              <th className="py-1 pr-3 font-semibold">Dimensions</th>
+              <th className="py-1 pr-3 font-semibold">A point</th>
+              <th className="py-1 font-semibold">Where you meet it</th>
+            </tr>
+          </thead>
+          <tbody>
+            {LADDER.map((r) => (
+              <tr key={r.dims} className="border-b border-line">
+                <td className="py-1 pr-3 font-semibold">{r.dims}</td>
+                <td className="py-1 pr-3 font-mono whitespace-nowrap">{r.point}</td>
+                <td className="py-1">{r.use}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>Past 3 dimensions it is hard to picture, but the same rules apply.</p>
       <p>
         In the code, <code>house.shape</code> is <code>(5,)</code> for five numbers, and{' '}
         <code>len(house)</code> gives the same count as a plain number.

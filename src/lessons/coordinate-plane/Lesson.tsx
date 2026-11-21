@@ -14,6 +14,7 @@ import { add, approxEqualVec, scale, sub } from '../../linalg'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { GridPlane } from './GridPlane'
+import { HouseExample } from './HouseExample'
 import { usePlaneHeight } from './layout'
 import { AxisNames, Guides, PointLabels, Quadrants, WalkArrows } from './Guides'
 import { PinControls, PinsOnPlane } from './PinParts'
@@ -353,6 +354,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <section aria-labelledby="whats-next" className="border-t border-line py-10">

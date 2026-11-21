@@ -105,3 +105,15 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   const width = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(width).toBeLessThanOrEqual(390)
 })
+
+test('the running example does vector arithmetic on the houses', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'Houses are vectors too' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box).toContainText('400 sqft bigger, 1 more bedroom, and 3 km closer')
+  await expect(box.getByLabel('Output')).toHaveText('[400   1  -3]\n[2200    4   16]\n[1500.       2.625    7.5  ]')
+  // it sits between Apply and Practice, and the six steps stay intact
+  const order = await page.locator('section[aria-labelledby]').evaluateAll((els) => els.map((e) => e.getAttribute('aria-labelledby')))
+  expect(order.indexOf('running-example')).toBe(order.indexOf('step-5') + 1)
+  expect(order.indexOf('step-6')).toBe(order.indexOf('running-example') + 1)
+})

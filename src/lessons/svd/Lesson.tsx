@@ -15,6 +15,7 @@ import { IDENTITY2, apply2, det2, lerp2, scale } from '../../linalg'
 import { svd2 } from '../../linalg/svd'
 import type { Mat2, Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { columnsOf, describeStage, extentFor, factorsTex, stepSentences } from './describe'
 import { PracticeStep } from './PracticeStep'
 import { ELLIPSE, SIGMA1, SIGMA2 } from './colors'
@@ -362,6 +363,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

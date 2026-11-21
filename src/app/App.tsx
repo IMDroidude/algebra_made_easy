@@ -3,6 +3,7 @@ import { HashRouter, Link, NavLink, Outlet, Route, Routes, useLocation } from 'r
 import { Playground } from '../playground/Playground'
 import { Home } from './Home'
 import { LessonRoute } from './LessonRoute'
+import { Reference } from './Reference'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -42,6 +43,9 @@ function Layout() {
             <NavLink to="/playground" className={navClass}>
               Playground
             </NavLink>
+            <NavLink to="/reference" className={navClass}>
+              Reference
+            </NavLink>
           </nav>
         </div>
       </header>
@@ -72,6 +76,7 @@ export function App() {
           <Route index element={<Home />} />
           <Route path="lessons/:slug" element={<LessonRoute />} />
           <Route path="playground" element={<Playground />} />
+          <Route path="reference" element={<Reference />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

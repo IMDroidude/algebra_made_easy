@@ -87,3 +87,19 @@ test('no sideways scrolling on a phone', async ({ page }) => {
   const width = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(width).toBeLessThanOrEqual(390)
 })
+
+test('the running example applies the lesson to the house dataset', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'How many ideas are in the house table?' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box.getByText('Running example · the house dataset')).toBeVisible()
+  await expect(box.getByText(/The singular values are 4\.03, 2\.74, 0\.5\./)).toBeVisible()
+  await expect(box.getByText(/rank 2 stores 20,008 numbers/)).toBeVisible()
+  await expect(box.getByLabel('Output')).toContainText('[4.03 2.74 0.5 ]')
+  // It sits between the Apply step and the Practice step.
+  const order = await page.evaluate(() => {
+    const ids = [...document.querySelectorAll('section[aria-labelledby]')].map((s) => s.getAttribute('aria-labelledby'))
+    return ids.indexOf('running-example') - ids.indexOf('step-5')
+  })
+  expect(order).toBe(1)
+})

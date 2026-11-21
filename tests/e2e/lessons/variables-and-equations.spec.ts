@@ -77,6 +77,18 @@ test('practice challenges tick from the live equation', async ({ page }) => {
   await expect(s.getByText(/pops all six balloons/)).toBeVisible()
 })
 
+test('running example: w from one house misses the others', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.locator('section[aria-labelledby="running-example"]')
+  await expect(box.getByRole('heading', { name: 'One house, one unknown' })).toBeVisible()
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText(
+    '0.24666666666666667\n[271. 370. 222. 493. 321. 444. 592. 247.]',
+  )
+  await box.getByRole('button', { name: 'Solve from house H' }).click()
+  await expect(box.getByRole('button', { name: 'Solve from house H' })).toHaveAttribute('aria-pressed', 'true')
+  await expect(box.getByLabel('Output', { exact: true })).toHaveText('0.205\n[226. 308. 184. 410. 266. 369. 492. 205.]')
+})
+
 test('no horizontal scroll at phone width', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 800 })
   await page.goto(LESSON)

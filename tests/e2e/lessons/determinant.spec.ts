@@ -101,3 +101,18 @@ test('no horizontal scroll at phone width', async ({ page }) => {
   const sw = await page.evaluate(() => document.documentElement.scrollWidth)
   expect(sw).toBeLessThanOrEqual(390)
 })
+
+const HOUSE_TITLE = 'A feature transform that loses houses'
+
+test('running example: det 0 merges houses, det 1 keeps them apart', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: HOUSE_TITLE })
+  const readout = box.getByTestId('house-det')
+  await expect(readout).toHaveText('det T = 0. 3 pairs of houses land on the same output: A and C, B and E, D and F.')
+  await expect(box.getByRole('row', { name: /Garden flat/ })).toContainText('(700, 1400)')
+  await expect(box.getByLabel('Output')).toHaveText('0.0\n[ 700 1400]\n[ 700 1400]')
+  await box.getByRole('button', { name: /^S:/ }).click()
+  await expect(readout).toHaveText('det S = 1. All 8 houses land on different outputs.')
+  await expect(box.getByLabel('Output')).toHaveText('1.0\n[700   2]\n[700   1]')
+  for (let n = 1; n <= 6; n++) await expect(page.locator(`section[aria-labelledby="step-${n}"]`)).toBeVisible()
+})

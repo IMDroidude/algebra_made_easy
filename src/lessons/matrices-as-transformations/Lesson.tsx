@@ -28,6 +28,7 @@ import {
 import type { Mat2, Vec2 } from '../../linalg'
 import { UNIT_SQUARE } from './galleryMath'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { Gallery } from './Gallery'
 import { understandExtentFor, P_LIMIT } from './pointMap'
 import { PracticeStep } from './PracticeStep'
@@ -371,6 +372,7 @@ export function Lesson() {
       <Gallery onTry={tryInStep2} />
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

@@ -21,6 +21,7 @@ import {
   scalarProjection,
 } from '../../linalg/projection'
 import { ApplyStep } from './ApplyStep'
+import { HouseExample } from './HouseExample'
 import { AngleArc, Shadow } from './Drawings'
 import { PracticeStep } from './PracticeStep'
 import {
@@ -369,6 +370,7 @@ export function Lesson() {
       </Step>
 
       <ApplyStep />
+      <HouseExample />
       <PracticeStep />
 
       <footer className="border-t border-line pt-8">

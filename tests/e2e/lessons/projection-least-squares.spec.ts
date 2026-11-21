@@ -74,3 +74,19 @@ test('practice: flatten the trend with the keyboard', async ({ page }) => {
   await expect(s.getByText('1 of 4 solved')).toBeVisible()
   await expect(s.getByText(/x tells you nothing about y/)).toBeVisible()
 })
+
+test('the running example applies the lesson to the house dataset', async ({ page }) => {
+  await page.goto(LESSON)
+  const box = page.getByRole('region', { name: 'Predict a house\'s price from all three features' })
+  await box.scrollIntoViewIfNeeded()
+  await expect(box.getByText('Running example · the house dataset')).toBeVisible()
+  await expect(box.getByText(/within \$4\.6k of the real price/)).toBeVisible()
+  await expect(box.getByText(/0\.217·sqft \+ 29\.8/)).toBeVisible()
+  await expect(box.getByLabel('Output')).toContainText('[ 0.219  1.142 -5.231 62.858]')
+  // It sits between the Apply step and the Practice step.
+  const order = await page.evaluate(() => {
+    const ids = [...document.querySelectorAll('section[aria-labelledby]')].map((s) => s.getAttribute('aria-labelledby'))
+    return ids.indexOf('running-example') - ids.indexOf('step-5')
+  })
+  expect(order).toBe(1)
+})

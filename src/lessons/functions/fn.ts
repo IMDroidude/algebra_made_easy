@@ -84,3 +84,8 @@ export const CHECKS: Record<string, (r: Rule) => boolean> = {
 export function solvedChecks(r: Rule): string[] {
   return Object.keys(CHECKS).filter((id) => CHECKS[id](r))
 }
+
+/** Rounds to `digits` decimals, so the model, its picture and its code hold the same number. */
+export function roundTo(x: number, digits = 2): number {
+  return Number(x.toFixed(digits)) + 0
+}
