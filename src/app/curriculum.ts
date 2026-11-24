@@ -138,6 +138,13 @@ export const CURRICULUM: Module[] = [
         summary: 'How alike are two embeddings?',
         ai: 'Cosine similarity ranks search results; dot products are the scores inside attention.',
       },
+      {
+        id: '3.4',
+        slug: 'distance-and-similarity',
+        title: 'Distance and similarity: choosing a measure',
+        summary: 'Euclidean, Manhattan, cosine, Jaccard: which one for which data?',
+        ai: 'Search, clustering and recommendations all depend on one choice: how to measure “close”.',
+      },
     ],
   },
   {

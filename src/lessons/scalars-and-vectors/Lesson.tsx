@@ -15,7 +15,10 @@ import { cleanZero2, isZeroVec } from '../../linalg/span'
 import type { Vec2 } from '../../linalg'
 import { ApplyStep } from './ApplyStep'
 import { HouseExample } from './HouseExample'
+import { KindsSection } from './KindsSection'
 import { PracticeStep } from './PracticeStep'
+import { ProductsSection } from './ProductsSection'
+import { TransformSection } from './TransformSection'
 import { VectorOps } from './VectorOps'
 import { hasNegativeZero, numpyPrint1d } from './numpyOut'
 import type { Op } from './ops'
@@ -321,6 +324,9 @@ export function Lesson() {
       <ApplyStep />
       <HouseExample />
       <PracticeStep />
+      <KindsSection />
+      <TransformSection />
+      <ProductsSection />
 
       <footer className="border-t border-line pt-8">
         <h2 className="m-0 font-display text-2xl">Keep experimenting</h2>

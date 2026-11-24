@@ -4,6 +4,7 @@ import type { Locator, Page } from '@playwright/test'
 const LESSON = '/#/lessons/dot-product'
 
 const step = (page: Page, n: number) => page.locator(`section[aria-labelledby="step-${n}"]`)
+const search = (page: Page) => page.locator('section[aria-labelledby="search-heading"]')
 const readout = (s: Locator) => s.locator('[aria-live]').first()
 
 async function press(page: Page, key: string, times: number) {
@@ -74,9 +75,31 @@ test('prediction is revealed only after locking in', async ({ page }) => {
   await expect(readout(s)).toContainText('a · b = 0.')
 })
 
-test('similarity search re-ranks when the query moves', async ({ page }) => {
+test('cat, tiger and car: wheels pulls the tiger and the car apart', async ({ page }) => {
   await page.goto(LESSON)
   const s = step(page, 5)
+  await expect(s.getByRole('button', { name: 'cat and tiger: cosine 0.857' })).toHaveAttribute('aria-pressed', 'true')
+  await s.getByRole('button', { name: 'tiger and car: cosine 0.707' }).click()
+  await expect(readout(s)).toContainText('dot product 12, cosine similarity 0.707, somewhat similar')
+  await s.getByLabel('Add a third feature: wheels').check()
+  await expect(readout(s)).toContainText('cosine similarity 0.424, only a little alike')
+  await expect(s.getByLabel('Output')).toContainText('[0.146 0.424 1.   ]')
+})
+
+test('cat, tiger and car: an arrow moved by keyboard moves its sliders', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = step(page, 5)
+  // The cat is the first arrow: (4, 1) → (4, 0), which shares nothing with the car (0, 3).
+  await s.locator('.mafs-movable-point').first().focus()
+  await press(page, 'ArrowDown', 1)
+  await expect(s.getByLabel('cat big')).toHaveValue('0')
+  await expect(s.getByRole('button', { name: 'cat and car: cosine 0.000' })).toBeVisible()
+  await expect(s.getByText('1 of 2 solved')).toBeVisible()
+})
+
+test('similarity search re-ranks when the query moves', async ({ page }) => {
+  await page.goto(LESSON)
+  const s = search(page)
   await expect(s.getByLabel('Output')).toHaveText(
     '1.000  Pet-friendly cafes\n0.923  What do cats eat?\n0.894  Puppy training tips',
   )
@@ -90,7 +113,7 @@ test('similarity search re-ranks when the query moves', async ({ page }) => {
 
 test('ranking by raw dot product favours long vectors', async ({ page }) => {
   await page.goto(LESSON)
-  const s = step(page, 5)
+  const s = search(page)
   await s.getByLabel(/Rank by raw dot product/).check()
   await expect(s.getByLabel('Output')).toHaveText(
     '13.000  Puppy training tips\n12.000  What do cats eat?\n9.500  Quick pasta recipes',
@@ -100,7 +123,7 @@ test('ranking by raw dot product favours long vectors', async ({ page }) => {
 
 test('documents become draggable on request', async ({ page }) => {
   await page.goto(LESSON)
-  const s = step(page, 5)
+  const s = search(page)
   await expect(s.locator('.mafs-movable-point')).toHaveCount(1)
   await s.getByLabel(/move the documents/).check()
   await expect(s.locator('.mafs-movable-point')).toHaveCount(6)

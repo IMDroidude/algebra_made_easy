@@ -90,6 +90,14 @@ export const PREREQUISITES: Record<string, Prerequisites> = {
       'Have a rough feel for angles in degrees (90° is a right angle)',
     ],
   },
+  'distance-and-similarity': {
+    lessons: ['exponents-and-roots', 'scalars-and-vectors', 'dot-product'],
+    skills: [
+      'Subtract one vector from another, entry by entry',
+      'Work out a square root such as √25, and know that |−3| means 3',
+      'Explain what a cosine similarity of 1 says about two vectors',
+    ],
+  },
   'matrices-as-transformations': {
     lessons: ['scalars-and-vectors', 'span-and-basis'],
     skills: ['Read a·u + b·v as “a copies of u plus b copies of v”'],

@@ -24,6 +24,7 @@ import { ApplyStep } from './ApplyStep'
 import { HouseExample } from './HouseExample'
 import { AngleArc, Shadow } from './Drawings'
 import { PracticeStep } from './PracticeStep'
+import { SimilarityStep } from './SimilarityStep'
 import {
   PREDICT_A,
   PREDICT_B,
@@ -369,6 +370,7 @@ export function Lesson() {
         </p>
       </Step>
 
+      <SimilarityStep />
       <ApplyStep />
       <HouseExample />
       <PracticeStep />
@@ -376,9 +378,12 @@ export function Lesson() {
       <footer className="border-t border-line pt-8">
         <h2 className="m-0 font-display text-2xl">Keep experimenting</h2>
         <p className="mt-2 max-w-[62ch]">
-          The next lesson, <Link to="/lessons/matrices-as-transformations">matrices as
-          transformations</Link>, uses the dot product without saying so: each entry of a
-          matrix times a vector is the dot product of one row with that vector.
+          The next lesson, <Link to="/lessons/distance-and-similarity">distance and
+          similarity</Link>, compares cosine with other ways to measure &ldquo;alike&rdquo; and
+          shows which to use when. After that,{' '}
+          <Link to="/lessons/matrices-as-transformations">matrices as transformations</Link> uses
+          the dot product without saying so: each entry of a matrix times a vector is the dot
+          product of one row with that vector.
         </p>
       </footer>
     </article>

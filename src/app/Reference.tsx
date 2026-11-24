@@ -1,4 +1,6 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { MEANING_TYPES, PROPERTY_TYPES } from '../data/vectorTypes'
 import { ALL_LESSONS } from './curriculum'
 
 type Row = { what: string; means: string; houses: string; ai: string; lessons: string[] }
@@ -93,6 +95,92 @@ function LessonLinks({ slugs }: { slugs: string[] }) {
   )
 }
 
+type PickerStep = { label: string; text: string; mono?: boolean }
+type PickerItem = { id: string; name: string; steps: PickerStep[] }
+
+const MEANING_ITEMS: PickerItem[] = MEANING_TYPES.map((t) => ({
+  id: t.id,
+  name: t.name,
+  steps: [
+    { label: 'Each number is', text: t.each },
+    { label: 'Object', text: t.object },
+    { label: 'Numbers', text: t.numbers },
+    { label: 'Vector', text: t.vector, mono: true },
+    ...(t.note ? [{ label: 'Worked', text: t.note }] : []),
+    { label: 'Used for', text: t.usedFor },
+  ],
+}))
+
+const PROPERTY_ITEMS: PickerItem[] = PROPERTY_TYPES.map((t) => ({
+  id: t.id,
+  name: t.name,
+  steps: [
+    { label: 'Meaning', text: t.meaning },
+    { label: 'Example', text: t.example },
+    { label: 'Why it matters', text: t.why },
+  ],
+}))
+
+/**
+ * A list of types; choosing one shows its details beside (or, on a phone, below) the list.
+ * The chosen button is marked with aria-pressed, a "▸" and bold text, not colour alone.
+ */
+function TypePicker({ name, items }: { name: string; items: PickerItem[] }) {
+  const [chosenId, setChosenId] = useState(items[0].id)
+  const chosen = items.find((x) => x.id === chosenId) ?? items[0]
+  const panelId = `${name}-panel`
+  return (
+    <div className="grid gap-4 md:grid-cols-[17rem_minmax(0,1fr)]">
+      <ul className="m-0 flex list-none flex-wrap gap-2 p-0 md:flex-col md:flex-nowrap md:gap-1">
+        {items.map((x) => {
+          const on = x.id === chosen.id
+          return (
+            <li key={x.id}>
+              <button
+                type="button"
+                aria-pressed={on}
+                aria-controls={panelId}
+                onClick={() => setChosenId(x.id)}
+                className={`w-full cursor-pointer rounded-md border px-3 py-1.5 text-left text-sm ${
+                  on
+                    ? 'border-accent bg-accent font-semibold text-accent-ink'
+                    : 'border-line bg-surface text-ink hover:border-accent'
+                }`}
+              >
+                <span aria-hidden="true" className="inline-block w-4">
+                  {on ? '▸' : ''}
+                </span>
+                {x.name}
+              </button>
+            </li>
+          )
+        })}
+      </ul>
+      <div
+        id={panelId}
+        role="region"
+        aria-live="polite"
+        aria-label={`${chosen.name}: details`}
+        className="self-start rounded-lg border border-line bg-surface p-4"
+      >
+        <h4 className="m-0 mb-3 font-display text-xl">{chosen.name}</h4>
+        <dl className="m-0 grid gap-x-4 gap-y-2 text-sm sm:grid-cols-[8rem_minmax(0,1fr)]">
+          {chosen.steps.map((st) => (
+            <div key={st.label} className="contents">
+              <dt className="font-semibold text-muted">{st.label}</dt>
+              <dd className={`m-0 mb-1 break-words sm:mb-0 ${st.mono ? 'font-mono' : ''}`}>
+                {st.text}
+              </dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  )
+}
+
+const PIPELINE = ['real-world object', 'numbers', 'vector', 'model']
+
 const th = 'border-b-2 border-line py-2 pr-4 text-left align-bottom font-semibold'
 const td = 'border-b border-line py-2 pr-4 align-top'
 
@@ -138,6 +226,102 @@ export function Reference() {
             </tbody>
           </table>
         </div>
+      </section>
+
+      <section aria-labelledby="vector-types" className="mb-12">
+        <h2 id="vector-types" className="m-0 mb-1 font-display text-2xl">
+          Types of vector
+        </h2>
+        <p className="mt-0 mb-3 max-w-[66ch] text-muted">
+          A vector is an ordered list of numbers that represents something. Machine learning
+          always follows the same path. What changes from one problem to the next is what the
+          numbers stand for.
+        </p>
+        <p
+          data-testid="vector-pipeline"
+          className="m-0 mb-6 flex flex-wrap items-center gap-x-2 gap-y-1 rounded-lg border border-line bg-surface px-4 py-3 font-mono text-sm"
+        >
+          {PIPELINE.map((stage, i) => (
+            <span key={stage} className="whitespace-nowrap">
+              {i > 0 && <span className="mr-2 text-muted">→</span>}
+              {stage}
+            </span>
+          ))}
+        </p>
+
+        <h3 id="vector-types-meaning" className="m-0 mb-1 font-display text-xl">
+          By what the numbers mean
+        </h3>
+        <p className="mt-0 mb-3 max-w-[66ch] text-muted">
+          Choose a type to follow one example from object to numbers to vector.
+        </p>
+        <TypePicker name="vector-meaning" items={MEANING_ITEMS} />
+        <details className="mt-3">
+          <summary className="cursor-pointer text-sm text-accent">
+            Show all {MEANING_TYPES.length} as a table
+          </summary>
+          <div className="mt-2 overflow-x-auto">
+            <table className="w-full min-w-[52rem] border-collapse text-sm">
+              <thead>
+                <tr>
+                  <th className={th}>Type</th>
+                  <th className={th}>What each number is</th>
+                  <th className={th}>Example object</th>
+                  <th className={th}>Vector</th>
+                  <th className={th}>Used for</th>
+                </tr>
+              </thead>
+              <tbody>
+                {MEANING_TYPES.map((t) => (
+                  <tr key={t.id}>
+                    <td className={`${td} font-semibold`}>{t.name}</td>
+                    <td className={td}>{t.each}</td>
+                    <td className={td}>{t.object}</td>
+                    <td className={`${td} font-mono`}>{t.vector}</td>
+                    <td className={td}>{t.usedFor}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
+
+        <h3 id="vector-types-property" className="m-0 mt-10 mb-1 font-display text-xl">
+          By mathematical property
+        </h3>
+        <p className="mt-0 mb-3 max-w-[66ch] text-muted">
+          These labels describe the shape or contents of a vector, whatever it stands for. One
+          vector can carry several at once: a one-hot vector is also binary, sparse and a unit
+          vector.
+        </p>
+        <TypePicker name="vector-property" items={PROPERTY_ITEMS} />
+        <details className="mt-3">
+          <summary className="cursor-pointer text-sm text-accent">
+            Show all {PROPERTY_TYPES.length} as a table
+          </summary>
+          <div className="mt-2 overflow-x-auto">
+            <table className="w-full min-w-[48rem] border-collapse text-sm">
+              <thead>
+                <tr>
+                  <th className={th}>Type</th>
+                  <th className={th}>Meaning</th>
+                  <th className={th}>Example</th>
+                  <th className={th}>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                {PROPERTY_TYPES.map((t) => (
+                  <tr key={t.id}>
+                    <td className={`${td} font-semibold`}>{t.name}</td>
+                    <td className={td}>{t.meaning}</td>
+                    <td className={td}>{t.example}</td>
+                    <td className={td}>{t.why}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </details>
       </section>
 
       <section aria-labelledby="operations">

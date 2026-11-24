@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { NumpySnippet } from '../../components/NumpySnippet'
 import { Arrow, DraggableArrow, Plane } from '../../components/Plane'
 import { Tex } from '../../components/Tex'
-import { Readout, Step, Tag, Toggle } from '../../components/ui'
+import { Readout, Tag, Toggle } from '../../components/ui'
 import { fmt, fmtVec } from '../../lib/format'
 import { COLOR } from '../../lib/palette'
 import type { Vec2 } from '../../linalg'
 import { isZeroVec, rankBySimilarity } from '../../linalg/projection'
+import { ContinuedStep } from './ContinuedStep'
 import { DOCS, DOC_NAMES, QUERY, TOP_K, searchSnippet } from './content'
 import { pyFixed } from './pyFormat'
 
@@ -35,9 +36,9 @@ export function ApplyStep() {
   }
 
   return (
-    <Step
-      n={5}
-      kind="Apply"
+    <ContinuedStep
+      id="search-heading"
+      kicker="Step 5 · Apply, continued"
       title="Finding similar documents: embedding search"
       visual={
         <>
@@ -122,9 +123,9 @@ export function ApplyStep() {
       }
     >
       <p>
-        Language models turn a piece of text into a long list of numbers, an{' '}
-        <strong>embedding</strong>, chosen so that texts with similar meanings get vectors that
-        point in similar directions. To find documents that match a question, a search system
+        You chose the cat&rsquo;s numbers by hand. Language models do it for you: they turn a
+        piece of text into a long list of numbers, an <strong>embedding</strong>, chosen so that
+        texts with similar meanings get vectors that point in similar directions. To find documents that match a question, a search system
         embeds the question as a query vector <Tag color={COLOR.v}>q</Tag> and ranks every document
         vector by cosine similarity with it:
       </p>
@@ -156,6 +157,6 @@ export function ApplyStep() {
         draw them, but the formula is exactly the one above, applied to longer lists. With
         millions of documents, systems use approximate search to avoid scoring every one.
       </p>
-    </Step>
+    </ContinuedStep>
   )
 }

@@ -1,5 +1,6 @@
 import { Line, Polyline, Text } from 'mafs'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { MatrixInput } from '../../components/MatrixInput'
 import { NumpySnippet } from '../../components/NumpySnippet'
 import { CoordPoint, Plane } from '../../components/Plane'
@@ -132,13 +133,14 @@ export function ApplyStep() {
         without an activation, any stack of layers multiplies out to one matrix.
       </p>
       <p>
-        <strong>Explore further:</strong> in{' '}
+        <strong>Explore further:</strong> in the Playground&rsquo;s{' '}
+        <Link to="/playground?lab=network">neural network lab</Link> you can watch a small network
+        learn to tell cats from tigers. Load experiment 4, which sets the activation to
+        &ldquo;Linear&rdquo;, and see it fail: the same collapse into one matrix shown here.{' '}
         <a href="https://playground.tensorflow.org" target="_blank" rel="noopener noreferrer">
           TensorFlow Playground
         </a>{' '}
-        you can watch a small network learn in your browser. Pick the circle dataset, switch the
-        activation to &ldquo;Linear&rdquo; and see it fail: the same collapse into one matrix shown
-        here.
+        is the larger tool the lab is modelled on.
       </p>
     </Step>
   )

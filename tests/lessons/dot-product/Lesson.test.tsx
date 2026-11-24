@@ -21,6 +21,7 @@ beforeAll(() => {
 })
 
 const step = (n: number) => document.querySelector(`section[aria-labelledby="step-${n}"]`) as HTMLElement
+const search = () => document.querySelector('section[aria-labelledby="search-heading"]') as HTMLElement
 const readout = (n: number) => step(n).querySelector('[aria-live]')!.textContent
 
 function renderLesson() {
@@ -77,9 +78,9 @@ describe('Dot product lesson', () => {
     expect(readout(3)).toContain('b is at (-1, 3), 90° from a. a · b = 0.')
   })
 
-  it('step 5 ranks by cosine, and the dot-product toggle changes the winners', async () => {
+  it('the search section ranks by cosine, and the dot-product toggle changes the winners', async () => {
     renderLesson()
-    const s = within(step(5))
+    const s = within(search())
     expect(s.getByLabelText('Output').textContent).toBe(
       '1.000  Pet-friendly cafes\n0.923  What do cats eat?\n0.894  Puppy training tips',
     )

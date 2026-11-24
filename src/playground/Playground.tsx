@@ -1,17 +1,22 @@
-import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { Button } from '../components/ui'
 import { MatrixLab } from './MatrixLab'
 import { VectorLab } from './VectorLab'
+import { NetworkLab } from './network/NetworkLab'
 
 const TABS = [
   { id: 'vectors', label: 'Vectors: add and scale' },
   { id: 'matrix', label: 'Matrix: transform the plane' },
+  { id: 'network', label: 'Neural network: cat or tiger?' },
 ] as const
 
 type TabId = (typeof TABS)[number]['id']
 
 export function Playground() {
-  const [tab, setTab] = useState<TabId>('vectors')
+  // The lab is in the URL (/#/playground?lab=network) so a lesson can link straight to one.
+  const [params, setParams] = useSearchParams()
+  const tab: TabId = TABS.find((t) => t.id === params.get('lab'))?.id ?? 'vectors'
+  const setTab = (id: TabId) => setParams(id === 'vectors' ? {} : { lab: id }, { replace: true })
   return (
     <div className="mx-auto max-w-6xl px-4 pb-20">
       <header className="py-10">
@@ -33,7 +38,7 @@ export function Playground() {
           ))}
         </div>
       </header>
-      {tab === 'vectors' ? <VectorLab /> : <MatrixLab />}
+      {tab === 'vectors' ? <VectorLab /> : tab === 'matrix' ? <MatrixLab /> : <NetworkLab />}
     </div>
   )
 }

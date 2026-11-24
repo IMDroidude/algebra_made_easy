@@ -17,7 +17,7 @@ test('home page starts at the beginning, or skips to vectors', async ({ page }) 
 test('every lesson is marked available and links work', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByText('Coming soon')).toHaveCount(0)
-  await expect(page.getByText('Available', { exact: true })).toHaveCount(22)
+  await expect(page.getByText('Available', { exact: true })).toHaveCount(23)
 })
 
 test('lesson navigation links to the next lesson', async ({ page }) => {
